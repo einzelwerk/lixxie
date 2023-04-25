@@ -589,7 +589,7 @@ select {
 }
   @font-face {
     font-family: 'Libre Franklin';
-    src: url(/LibreFranklin-SemiBold.woff2) format('woff2'), url(/LibreFranklin-SemiBold.woff) format('woff');
+    src: url(assets/fonts/0e93bb0063d1424dab04.woff2) format('woff2'), url(assets/fonts/7095c732c711e9c4f377.woff) format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -597,7 +597,7 @@ select {
 
   @font-face {
     font-family: 'Libre Franklin';
-    src: url(/LibreFranklin-Medium.woff2) format('woff2'), url(/LibreFranklin-Medium.woff) format('woff');
+    src: url(assets/fonts/6de8cc373dabf66bf11a.woff2) format('woff2'), url(assets/fonts/3d54af9193dc5c9d7599.woff) format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -605,7 +605,7 @@ select {
 
   @font-face {
     font-family: 'Libre Franklin';
-    src: url(/LibreFranklin-Regular.woff2) format('woff2'), url(/LibreFranklin-Regular.woff) format('woff');
+    src: url(assets/fonts/2a5969a6fceeb8f19d87.woff2) format('woff2'), url(assets/fonts/376191d32a5e3b7817df.woff) format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -613,7 +613,7 @@ select {
 
   @font-face {
     font-family: 'Oceanic';
-    src: url(/Oceanic-Regular.woff2) format('woff2'), url(/Oceanic-Regular.woff) format('woff');
+    src: url(assets/fonts/3738a77283cbf633e466.woff2) format('woff2'), url(assets/fonts/cf462bde56a9fc170cfc.woff) format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
