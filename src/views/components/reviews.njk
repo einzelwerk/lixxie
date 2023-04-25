@@ -1,0 +1,55 @@
+<section class="section container">
+  <div class="section-heading-2">
+    <h2 class="section-heading-2__title">Ihre Meinung über unsere Produkte und Service ist uns wichtig.</h2>
+    <div class="section-heading-2__col">
+      <p class="section-heading-2__desc">Lixxi is a collectible wear studio backed by a manufacturing workshop.</p>
+      <a href="" class="section-heading-2__link">
+        Alle Kundenbewertungen
+        <svg width="12" height="12">
+          <use xlink:href="./assets/sprite.svg#arrow-r_sprite"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="flex overflow-auto gap-3 md:grid md:grid-cols-3 md:gap-6 ">
+    {% for item in[1, 2, 3] %}
+
+      <div class="flex gap-3 md:flex-col md:gap-6">
+        {% for item in[1, 2] %}
+          <div class="w-56  flex flex-col bg-white gap-5 rounded-lg p-3 md:p-8 md:w-auto">
+            <div class="flex items-center gap-4">
+              <picture class="w-12 h-12 md:w-[60px] md:h-[60px] block">
+                <img class="w-full h-full object-cover block" src={% static './images/reviews.jpg' %} alt="">
+              </picture>
+              <div class="flex-col">
+                <h3 class="text-xs md:text-sm font-medium">Courtney Holloway</h3>
+                <p class="text-xs md:text-sm text-gray-350">@NiceToMeatU</p>
+              </div>
+            </div>
+            <p class="text-xs md:text-sm">Lixxi has the best collection of trendy and stylish wear! I always find something unique and perfect for every occasion.</p>
+            <div class="flex gap-[2px]">
+              <svg class="w-5 h-5 md:h-6 md:w-6">
+                <use xlink:href="./assets/sprite.svg#star_sprite"></use>
+              </svg>
+              <svg class="w-5 h-5 md:h-6 md:w-6">
+                <use xlink:href="./assets/sprite.svg#star_sprite"></use>
+              </svg>
+              <svg class="w-5 h-5 md:h-6 md:w-6">
+                <use xlink:href="./assets/sprite.svg#star_sprite"></use>
+              </svg>
+              <svg class="w-5 h-5 md:h-6 md:w-6">
+                <use xlink:href="./assets/sprite.svg#star_sprite"></use>
+              </svg>
+              <svg class="w-5 h-5 md:h-6 md:w-6">
+                <use xlink:href="./assets/sprite.svg#star_sprite"></use>
+              </svg>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% endfor %}
+  </div>
+
+</section>

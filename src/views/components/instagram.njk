@@ -1,0 +1,16 @@
+<section class="section container">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <h4 class="font-serif text-lg md:text-xl">Folgen Sie uns auf Instagram <a href="https://instagram.com" class="text-gray-250 transition-colors hover:text-black" target="_blank" rel="noopener nofollow">@lixxi_wear</a>
+    </h4>
+    <div class="flex gap-2 md:gap-4">
+      {% for items in[1, 2, 3, 4] %}
+        <picture class="rounded-lg overflow-hidden w-14 h-14 block md:w-[88px] md:h-[88px]">
+          <img class="block w-full h-full object-cover" src={% static './images/inst.jpg' %} alt="">
+        </picture>
+      {% endfor %}
+      <div class="rounded-lg overflow-hidden w-14 h-14 flex items-center justify-center font-serif bg-white md:w-[88px] md:h-[88px]">
+        +72
+      </div>
+    </div>
+  </div>
+</section>

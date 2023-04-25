@@ -1,0 +1,111 @@
+<section>
+  <section class="section container">
+    <div class="section-heading">
+      <h2 class="section-heading__title">
+        Neuheiten
+    </h2>
+      <a href="" class="section-heading__link">
+      Alles zeigen
+      <svg width='12' height='12'>
+          <use xlink:href='./assets/sprite.svg#arrow-r_sprite'></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 sm:gap-5">
+      {% for items in [1,2,3,4,5,6,7,8] -%}
+        {% include 'card.njk' %}
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="flex flex-col gap-8 md:gap-6 md:flex-row">
+      <div class="flex flex-col flex-1 min-w-0 flex-grow-1">
+        <div class="mb-10">
+          <h2 class="text-xl font-serif mb-6">Beliebte Artikel</h2>
+          <p class="text-gray-300 text-base">Diese Artikel können Ihnen auch gefallen</p>
+        </div>
+        <div class="h-full">
+          <div class="swiper js-base-slider rounded-lg overflow-hidden h-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture class="block h-full">
+                  <img src={% static './images/slider-1.jpg' %} alt="" class="w-full h-full object-cover block">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture class="block h-full">
+                  <img src={% static './images/slider-1.jpg' %} alt="" class="w-full h-full object-cover block">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture class="block h-full">
+                  <img src={% static './images/slider-1.jpg' %} alt="" class="w-full h-full object-cover block">
+                </picture>
+              </div>
+            </div>
+            <div class="absolute flex justify-center z-10 bottom-8 w-full px-11 sm:px-16">
+              <div class="swiper-pagination slider-pagination w-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-y-10 gap-x-6 flex-1">
+        {% for items in [1,2,3,4] -%}
+          {% include 'card.njk' %}
+        {%- endfor %}
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <h2 class="section-heading__title">
+       Limitierte Kollektion “Viktor”
+      </h2>
+      <a href="" class="section-heading__link">
+      Jetzt entdecken
+      <svg width='12' height='12'>
+          <use xlink:href='./assets/sprite.svg#arrow-r_sprite'></use>
+        </svg>
+      </a>
+    </div>
+    <div class="swiper js-half-slider overflow-visible">
+      <div class="swiper-wrapper sm:gap-x-6 gap-y-10 sm:grid sm:grid-cols-2 md:grid-cols-3">
+        {% for items in [1,2,3,4,5,6] -%}
+          <div class="swiper-slide">
+            {% include 'card.njk' %}
+          </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="h-[280px] sm:h-[420px] relative mb-[60px]">
+      <picture class="w-full block absolute inset-0">
+        <source media="(max-width:768px)" srcset={% static './images/blue-m.jpg' %}>
+        <img src={% static './images/blue.jpg' %} alt="" class="block w-full h-full object-cover">
+      </picture>
+      <div class="container absolute z-10 inset-0 flex items-center justify-center md:items-end md:justify-start md:inset-x-0 md:bottom-16 ">
+        <div class="flex flex-col items-center mx-auto max-w-xs md:mx-0 md:items-start">
+          <h3 class="text-center md:text-left font-serif text-xl text-black mb-8">
+          New Arrivals Winter/Autumn 23'
+        </h3>
+          <a href="" class="text-center md:text-left inline-block btn btn--black">
+          JETZT ENTDECKEN
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="container gap-x-5 gap-y-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      {% for items in [1,2,3,4,5,6,7,8] -%}
+        <div class="swiper-slide">
+          {% include 'card.njk' %}
+        </div>
+      {%- endfor %}
+    </div>
+  </section>
+</section>

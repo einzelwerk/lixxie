@@ -1,0 +1,31 @@
+<article class="card">
+
+  <div class="mb-4 relative h-0 pb-[115%]">
+    <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+      <div class=" text-xs uppercase font-medium z-10 bg-red text-white py-1 px-2 rounded-lg">-15%</div>
+      <div class="text-xs uppercase font-medium z-10 bg-white py-1 px-2 rounded-lg">NEUHEIT</div>
+    </div>
+    <button class="absolute bottom-2 right-2  gap-1 w-10 h-10 rounded-full bg-white flex items-center justify-center [ .js-add-favorite ] z-10 group">
+      <svg width='20' height='20' class="transition-all group-hover:scale-105">
+        <use xlink:href='./assets/sprite.svg#favorite_sprite'></use>
+      </svg>
+    </button>
+    <a href="#" class="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden group">
+      <picture class="block absolute left-0 top-0 w-full h-full group-hover:opacity-0">
+        <img src={% static './images/card.jpg' %} class="w-full h-full object-cover block" alt="">
+      </picture>
+      <picture class="absolute left-0 top-0 w-full h-full hidden group-hover:block">
+        <img src={% static './images/card-2.jpg' %} class="w-full h-full object-cover block" alt="">
+      </picture>
+    </a>
+  </div>
+  <a href="#" class="flex flex-col gap-1">
+    <h2 class="text-sm font-medium ">Travis Scott x Air Jordan Graphic Hoody</h2>
+    <p class="text-gray-200">Mid Gray</p>
+    <p class="font-serif flex gap-[6px] ">
+      <span class=>€177,51</span>
+      <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
+    </p>
+  </a>
+
+</article>

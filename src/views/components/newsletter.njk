@@ -1,0 +1,22 @@
+<section class="section pb-0">
+  <div class="bg-white py-12 md:py-20">
+    <div class="container flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
+      <div class="flex flex-col max-w-xl">
+        <h4 class="font-serif text-lg md:text-xl mb-6">-10% für die erste Bestellung</h4>
+        <p class="text-sm mb-12">Seien Sie der erste, der über besondere Rabatte und Angebote informiert wird.</p>
+        <form action="" class="flex gap-3 md:pr-20">
+          <input type="text" class="flex-1 py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="E-Mail" />
+          <button class="btn btn--black">
+            <svg width="24" height="24" class="md:hidden">
+              <use xlink:href="./assets/sprite.svg#check_sprite"></use>
+            </svg>
+            <span class="hidden md:inline-block">Newsletter</span>
+          </button>
+        </form>
+      </div>
+      <picture class="block w-full md:max-w-[600px]">
+        <img class="w-full h-full object-contain" src={% static './images/newsletter.png' %} alt="">
+      </picture>
+    </div>
+  </div>
+</section>
