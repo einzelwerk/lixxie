@@ -415,62 +415,184 @@
       <main class="main">
 
         
-  <section class="">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-1 flex max-lg:container justify-end pt-8 md:pt-14  max-lg:pb-20 lg:pr-24">
-        <div class="w-full max-w-xl flex flex-col">
-          <div class="flex gap-3 mb-12">
-            <h1 class="text-lg font-serif">Sign In</h1>
-            <a href="" class="hover:text-black transition-colors text-lg font-serif text-gray-200"> Registrieren </a>
-          </div>
-          <form action="" class="flex flex-col gap-5">
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">E-Mail-Adresse</span>
-              <input
-              class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-              type="text"
-              placeholder="example@example.com"
-/>
-            </label>
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">Passwort</span>
-              <div class="relative">
-                <input
-                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-                type="password"
-                placeholder="password"
-/>
-                <button class="js-toggle-password block absolute right-4 top-0 bottom-0" type="button">
-                  <svg width="20" height="20">
-                    <use xlink:href="./assets/sprite.svg#password_sprite"></use>
+  <section class="section container">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+      <aside class="flex flex-col gap-8 flex-none md:w-48">
+        <h3 class="font-serif text-md hidden md:block">My account</h3>
+        <nav class="flex">
+        <ul class="flex overflow-auto sm:flex-col gap-5">
+            <li class="flex text-gray-300 active max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium">
+              <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+                <svg width="24" height="24">
+                  <use xlink:href="./assets/sprite.svg#deliverybox_sprite"></use>
+                </svg>
+                <span>Orders</span></a
+            >
+            </li>
+            <li class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium">
+              <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+                <svg width="24" height="24">
+                  <use xlink:href="./assets/sprite.svg#recipt_sprite"></use>
+                </svg>
+                <span>Details</span></a
+            >
+            </li>
+            <li class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium">
+              <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+                <svg width="24" height="24">
+                  <use xlink:href="./assets/sprite.svg#shop_sprite"></use>
+                </svg>
+                <span>Addresses</span></a
+            >
+            </li>
+            <li class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium">
+              <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+                <svg width="24" height="24">
+                  <use xlink:href="./assets/sprite.svg#message_sprite"></use>
+                </svg>
+                <span>Preferences</span></a
+            >
+            </li>
+            <li class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium">
+              <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+                <svg width="24" height="24">
+                  <use xlink:href="./assets/sprite.svg#alarm_sprite"></use>
+                </svg>
+                <span>Notifications</span></a
+            >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="flex flex-col gap-10 w-full">
+        <h1 class="text-lg font-serif ">My orders</h1>
+        <div class="flex flex-col">
+          
+            <div class="flex flex-col py-6 md:py-8 border-t border-gray-100">
+              <div class="flex justify-between mb-3">
+                <h4 class="text-sm">Your order number is №12732-000012</h4>
+                <data class="font-medium">188.95€ </data>
+              </div>
+              <div class="flex flex-col gap-3 mb-6">
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Date</span>
+                  <span> 12.02.2023</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Status</span>
+                  <span> Order in progress</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-6 justify-between md:items-end md:flex-row">
+                <div class="flex flex-wrap gap-3">
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/021f193c52db526e8291.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/67176284347cb8945fd8.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/b7012d6a983af23493a7.jpg alt="">
+                    </picture>
+                  
+                  <div class="flex text-xs font-medium items-center justify-center w-[64px] h-[76px] bg-[#FADFCC] rounded-lg">+3</div>
+                </div>
+                <a class="flex items-center text-sm group" href="">
+                  <span>View details </span>
+                  <svg width="24" height="24" class="transition-transform group-hover:translate-x-1">
+                    <use xlink:href="./assets/sprite.svg#arrow-r-2_sprite"></use>
                   </svg>
-                </button>
+                </a>
               </div>
-            </label>
-            <div class="flex justify-between mb-5">
-              <div class="flex gap-3">
-                <input class="peer sr-only" id="remember-me" type="checkbox"/>
-                <span class="block w-4 h-4 flex-none border border-gray-100 rounded peer-checked:bg-checked bg-no-repeat bg-[8px,6px] bg-center"></span>
-                <label for="remember-me" class="flex items-center">
-                  <span class="text-xs">Angemeldet bleiben</span>
-                </label>
+            </div>
+          
+            <div class="flex flex-col py-6 md:py-8 border-t border-gray-100">
+              <div class="flex justify-between mb-3">
+                <h4 class="text-sm">Your order number is №12732-000012</h4>
+                <data class="font-medium">188.95€ </data>
               </div>
-              <a href="" class="underline text-xs"> Passwort vergessen? </a>
+              <div class="flex flex-col gap-3 mb-6">
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Date</span>
+                  <span> 12.02.2023</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Status</span>
+                  <span> Order in progress</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-6 justify-between md:items-end md:flex-row">
+                <div class="flex flex-wrap gap-3">
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/021f193c52db526e8291.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/67176284347cb8945fd8.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/b7012d6a983af23493a7.jpg alt="">
+                    </picture>
+                  
+                  <div class="flex text-xs font-medium items-center justify-center w-[64px] h-[76px] bg-[#FADFCC] rounded-lg">+3</div>
+                </div>
+                <a class="flex items-center text-sm group" href="">
+                  <span>View details </span>
+                  <svg width="24" height="24" class="transition-transform group-hover:translate-x-1">
+                    <use xlink:href="./assets/sprite.svg#arrow-r-2_sprite"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <div class="flex flex-col gap-3">
-              <button class="btn btn--black-filled uppercase">Login</button>
-              <span class="text-gray-200 text-center">Oder</span>
-              <a href="" class="btn btn--black flex gap-4 items-center uppercase justify-center rounded">
-                <img src=assets/images/22f34496329955da2ffa.svg alt="">
-                <span>Weiter mit facebook</span>
-              </a>
+          
+            <div class="flex flex-col py-6 md:py-8 border-t border-gray-100">
+              <div class="flex justify-between mb-3">
+                <h4 class="text-sm">Your order number is №12732-000012</h4>
+                <data class="font-medium">188.95€ </data>
+              </div>
+              <div class="flex flex-col gap-3 mb-6">
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Date</span>
+                  <span> 12.02.2023</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="text-gray-200">Status</span>
+                  <span> Order in progress</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-6 justify-between md:items-end md:flex-row">
+                <div class="flex flex-wrap gap-3">
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/021f193c52db526e8291.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/67176284347cb8945fd8.jpg alt="">
+                    </picture>
+                  
+                    <picture class="block w-[64px] h-[76px] rounded-lg overflow-hidden">
+                      <img class="w-full h-full object-cover" src=assets/images/b7012d6a983af23493a7.jpg alt="">
+                    </picture>
+                  
+                  <div class="flex text-xs font-medium items-center justify-center w-[64px] h-[76px] bg-[#FADFCC] rounded-lg">+3</div>
+                </div>
+                <a class="flex items-center text-sm group" href="">
+                  <span>View details </span>
+                  <svg width="24" height="24" class="transition-transform group-hover:translate-x-1">
+                    <use xlink:href="./assets/sprite.svg#arrow-r-2_sprite"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
-          </form>
+          
         </div>
       </div>
-      <picture class="flex-1 block h-screen">
-        <img src=assets/images/b57573bdc52748bedb90.jpg class="w-full h-full object-cover" alt="">
-      </picture>
     </div>
   </section>
 

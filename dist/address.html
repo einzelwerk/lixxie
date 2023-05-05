@@ -415,64 +415,157 @@
       <main class="main">
 
         
-  <section class="">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-1 flex max-lg:container justify-end pt-8 md:pt-14  max-lg:pb-20 lg:pr-24">
-        <div class="w-full max-w-xl flex flex-col">
-          <div class="flex gap-3 mb-12">
-            <h1 class="text-lg font-serif">Sign In</h1>
-            <a href="" class="hover:text-black transition-colors text-lg font-serif text-gray-200"> Registrieren </a>
-          </div>
-          <form action="" class="flex flex-col gap-5">
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">E-Mail-Adresse</span>
-              <input
-              class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-              type="text"
-              placeholder="example@example.com"
-/>
-            </label>
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">Passwort</span>
-              <div class="relative">
-                <input
-                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-                type="password"
-                placeholder="password"
-/>
-                <button class="js-toggle-password block absolute right-4 top-0 bottom-0" type="button">
-                  <svg width="20" height="20">
-                    <use xlink:href="./assets/sprite.svg#password_sprite"></use>
-                  </svg>
-                </button>
-              </div>
-            </label>
-            <div class="flex justify-between mb-5">
-              <div class="flex gap-3">
-                <input class="peer sr-only" id="remember-me" type="checkbox"/>
-                <span class="block w-4 h-4 flex-none border border-gray-100 rounded peer-checked:bg-checked bg-no-repeat bg-[8px,6px] bg-center"></span>
-                <label for="remember-me" class="flex items-center">
-                  <span class="text-xs">Angemeldet bleiben</span>
-                </label>
-              </div>
-              <a href="" class="underline text-xs"> Passwort vergessen? </a>
-            </div>
-            <div class="flex flex-col gap-3">
-              <button class="btn btn--black-filled uppercase">Login</button>
-              <span class="text-gray-200 text-center">Oder</span>
-              <a href="" class="btn btn--black flex gap-4 items-center uppercase justify-center rounded">
-                <img src=assets/images/22f34496329955da2ffa.svg alt="">
-                <span>Weiter mit facebook</span>
-              </a>
-            </div>
-          </form>
-        </div>
+<section class="section container">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+    <aside class="flex flex-col gap-8 flex-none md:w-48">
+      <h3 class="font-serif text-md hidden md:block">My account</h3>
+      <nav class="flex">
+        <ul class="flex overflow-auto sm:flex-col gap-5">
+          <li
+            class="flex text-gray-300 active max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#deliverybox_sprite"></use>
+              </svg>
+              <span>Orders</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#recipt_sprite"></use>
+              </svg>
+              <span>Details</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#shop_sprite"></use>
+              </svg>
+              <span>Addresses</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#message_sprite"></use>
+              </svg>
+              <span>Preferences</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#alarm_sprite"></use>
+              </svg>
+              <span>Notifications</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="flex flex-col items-start gap-10 w-full max-w-xl">
+      <h1 class="text-lg font-serif">My addresses</h1>
+      <div class="flex flex-col gap-4 max-w-xl border-t border-gray-100 pt-6 md:pt-8 w-full">
+        <img src=assets/images/706dfa41aceb5075c26b.svg class="w-10 h-10 block" alt="">
+        <span class="text-base">You currently have no addresses saved</span>
+        <span class="text-sm">Add an address for a quicker checkout experience</span>
       </div>
-      <picture class="flex-1 block h-screen">
-        <img src=assets/images/b57573bdc52748bedb90.jpg class="w-full h-full object-cover" alt="">
-      </picture>
+      <button class="btn btn--black-filled uppercase px-24 js-create-address" type="button">add address</button>
+      <div class="js-address hidden [&.active]:flex flex-col pt-6 md:pt-8 gap-8 w-full border-t border-gray-100">
+        <h3 class="font-serif text-base">New address</h3>
+        <form action="">
+          <div class="grid grid-cols-2 gap-y-6 gap-x-3 md:gap-x-5 md:gap-y-4 mb-8">
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">First name</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Second name</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Company name (optional)</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Company name (optional)</span>
+              <select class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm">
+                <option>Germany</option>
+                <option>USA</option>
+                <option>USA</option>
+              </select>
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Address</span>
+              <fieldset class="flex flex-col gap-3">
+                <input
+                  class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="text"
+                  placeholder="Street and house number"
+                />
+                <input
+                  class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="text"
+                  placeholder="Building, entrance, floor, apartment number"
+                />
+              </fieldset>
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Region</span>
+              <select class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm">
+                <option>Land Berlin</option>
+                <option>USA</option>
+                <option>USA</option>
+              </select>
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Locality</span>
+
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+                placeholder="Street and house number"
+              />
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Index</span>
+
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+                placeholder="Street and house number"
+              />
+            </label>
+          </div>
+          <div class="flex gap-1 md:gap-5 w-full">
+            <button class="flex-1 btn btn--black uppercase js-cancel-create-address" type="button">cancel</button>
+            <button class="flex-1 btn btn--black-filled uppercase" type="submit">Confirm</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
 
