@@ -415,64 +415,99 @@
       <main class="main">
 
         
-  <section class="">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-1 flex max-lg:container justify-end pt-8 md:pt-14  max-lg:pb-20 lg:pr-24">
-        <div class="w-full max-w-xl flex flex-col">
-          <div class="flex gap-3 mb-12">
-            <h1 class="text-lg font-serif">Sign In</h1>
-            <a href="" class="hover:text-black transition-colors text-lg font-serif text-gray-200"> Registrieren </a>
+<section class="section container">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+    <aside class="flex flex-col gap-8 flex-none md:w-48">
+      <h3 class="font-serif text-md hidden md:block">My account</h3>
+      <nav class="flex">
+        <ul class="flex overflow-auto sm:flex-col gap-5">
+          <li
+            class="flex text-gray-300 active max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#deliverybox_sprite"></use>
+              </svg>
+              <span>Orders</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#recipt_sprite"></use>
+              </svg>
+              <span>Details</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#shop_sprite"></use>
+              </svg>
+              <span>Addresses</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#message_sprite"></use>
+              </svg>
+              <span>Preferences</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#alarm_sprite"></use>
+              </svg>
+              <span>Notifications</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="flex flex-col items-start gap-10 w-full max-w-xl">
+      <h1 class="text-lg font-serif">Account details</h1>
+      <div class="flex border-t border-gray-100 pt-6 md:pt-8 w-full relative">
+        <a href="" class="absolute underline right-0 ">Edit</a>
+        <div class="flex flex-col gap-3  max-w-sm ">
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>First name</span>
+            <span class="font-medium">Ched</span>
           </div>
-          <form action="" class="flex flex-col gap-5">
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">E-Mail-Adresse</span>
-              <input
-              class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-              type="text"
-              placeholder="example@example.com"
-/>
-            </label>
-            <label class="flex flex-col gap-3" for="">
-              <span class="text-xs">Passwort</span>
-              <div class="relative">
-                <input
-                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
-                type="password"
-                placeholder="password"
-/>
-                <button class="js-toggle-password block absolute right-4 top-0 bottom-0" type="button">
-                  <svg width="20" height="20">
-                    <use xlink:href="./assets/sprite.svg#password_sprite"></use>
-                  </svg>
-                </button>
-              </div>
-            </label>
-            <div class="flex justify-between mb-5">
-              <div class="flex gap-3">
-                <input class="peer sr-only" id="remember-me" type="checkbox"/>
-                <span class="block w-4 h-4 flex-none border border-gray-100 rounded peer-checked:bg-checked bg-no-repeat bg-[8px,6px] bg-center"></span>
-                <label for="remember-me" class="flex items-center">
-                  <span class="text-xs">Angemeldet bleiben</span>
-                </label>
-              </div>
-              <a href="" class="underline text-xs"> Passwort vergessen? </a>
-            </div>
-            <div class="flex flex-col gap-3">
-              <button class="btn btn--black-filled uppercase">Login</button>
-              <span class="text-gray-200 text-center">Oder</span>
-              <a href="" class="btn btn--black flex gap-4 items-center uppercase justify-center rounded">
-                <img src=assets/images/22f34496329955da2ffa.svg alt="">
-                <span>Weiter mit facebook</span>
-              </a>
-            </div>
-          </form>
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>Last name</span>
+            <span class="font-medium">Fox</span>
+          </div>
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>Phone number</span>
+            <span class="font-medium">+1 (000) 999-00-00</span>
+          </div>
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>Email address</span>
+            <span class="font-medium">myemail2@mail.com</span>
+          </div>
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>Date of Birth</span>
+            <span class="font-medium">10.07.2000</span>
+          </div>
+          <div class="grid grid-cols-2 gap-6 items-center md:gap-2">
+            <span class=>Password</span>
+            <span class="font-medium">******************</span>
+          </div>
         </div>
       </div>
-      <picture class="flex-1 block h-screen">
-        <img src=assets/images/b57573bdc52748bedb90.jpg class="w-full h-full object-cover" alt="">
-      </picture>
     </div>
-  </section>
+  </div>
+</section>
 
 
 
