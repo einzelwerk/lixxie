@@ -18,397 +18,658 @@
       
         
 
-<aside class="bg-gradient-to-r from-[#FCEFE6] to-[#F7D6DF] w-full font-medium py-3 text-[12px] uppercase text-center">
+<div class="flex gap-4">
+  
+    <a href=about.html>
+      about
+    </a>
+  
+    <a href=address.html>
+      address
+    </a>
+  
+    <a href=card.html>
+      card
+    </a>
+  
+    <a href=cart.html>
+      cart
+    </a>
+  
+    <a href=catalog.html>
+      catalog
+    </a>
+  
+    <a href=details.html>
+      details
+    </a>
+  
+    <a href=error404.html>
+      error404
+    </a>
+  
+    <a href=faq.html>
+      faq
+    </a>
+  
+    <a href=favorites.html>
+      favorites
+    </a>
+  
+    <a href=forgot-check.html>
+      forgot-check
+    </a>
+  
+    <a href=forgot-success.html>
+      forgot-success
+    </a>
+  
+    <a href=forgot.html>
+      forgot
+    </a>
+  
+    <a href=index.html>
+      index
+    </a>
+  
+    <a href=order-details.html>
+      order-details
+    </a>
+  
+    <a href=orders.html>
+      orders
+    </a>
+  
+    <a href=privacy-policy.html>
+      privacy-policy
+    </a>
+  
+    <a href=register.html>
+      register
+    </a>
+  
+    <a href=reset-password.html>
+      reset-password
+    </a>
+  
+    <a href=shipping.html>
+      shipping
+    </a>
+  
+    <a href=signin.html>
+      signin
+    </a>
+  
+    <a href=thank-you.html>
+      thank-you
+    </a>
+  
+    <a href=verify-email.html>
+      verify-email
+    </a>
+  
+</div>
+
+<div x-data="{menuOpen : false}">
+  <aside class="bg-gradient-to-r from-[#FCEFE6] to-[#F7D6DF] w-full font-medium py-3 text-[12px] uppercase text-center">
   PREVIOUS COLLECTION FINAL SALE: <span class="text-red">-50%</span>
-</aside>
-<header>
-  <div class="py-4 md:py-9 container grid grid-cols-[1fr_max-content_1fr] items-center">
-    <button class="flex md:hidden" type="button">
-      <svg width='24' height='24'>
-        <use xlink:href='./assets/sprite.svg#menu_sprite'></use>
-      </svg>
-    </button>
-    <form action="" class="hidden md:flex">
-      <input type="text" class="py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="Suche..."/>
-      <button class="rounded-r bg-gray-50 flex items-center justify-center p-3 border border-l-0 border-gray-100 transition-all hover:bg-gray-100">
-        <svg width="20" height="20">
-          <use xlink:href="./assets/sprite.svg#search_sprite"></use>
+  </aside>
+  <header>
+    <div class="py-4 md:py-9 container grid grid-cols-[1fr_max-content_1fr] items-center">
+      <button class="flex md:hidden" type="button" x-on:click="menuOpen = ! menuOpen" aria-label="Open menu">
+        <svg width="24" height="24">
+          <use xlink:href="./assets/sprite.svg#menu_sprite"></use>
         </svg>
       </button>
-    </form>
-    <div class="flex justify-center items-center">
-      <a href="" class="block">
-        <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
-      </a>
+      <form action="" class="hidden md:flex">
+        <input type="text" class="py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="Suche..."/>
+        <button class="rounded-r bg-gray-50 flex items-center justify-center p-3 border border-l-0 border-gray-100 transition-all hover:bg-gray-100">
+          <svg width="20" height="20">
+            <use xlink:href="./assets/sprite.svg#search_sprite"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="flex justify-center items-center">
+        <a href="" class="block">
+          <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
+        </a>
+      </div>
+      <div class="flex gap-5 justify-end">
+        <a href="" class="hidden md:block group-hover:bg-red">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#user_sprite"></use>
+          </svg>
+        </a>
+        <a href="" class="block group-hover:bg-red">
+          <svg width="24" height="24" class="fill-none stroke-black transition-all hover:fill-red hover:stroke-red">
+            <use xlink:href="./assets/sprite.svg#favorite-filled_sprite"></use>
+          </svg>
+        </a>
+        <a href="" class="block group-hover:bg-red">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#cart_sprite"></use>
+          </svg>
+        </a>
+      </div>
     </div>
-    <div class="flex gap-5 justify-end">
-      <a href="" class="hidden md:block group-hover:bg-red">
+
+    <nav class="hidden md:block border border-t border-gray-100 relative">
+      <ul class="flex flex-wrap justify-center items-center gap-3">
+        <li class="text-xs group hover:border-b border-black">
+            <a href=/catalog.html class="block py-5 px-3">Shop</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Shop</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li><li class="text-xs group hover:border-b border-black">
+            <a href=/about.html class="block py-5 px-3">About</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">About</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li><li class="text-xs group hover:border-b border-black">
+            <a href=/card.html class="block py-5 px-3">Card</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Card</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li><li class="text-xs group hover:border-b border-black">
+            <a href=/favorites.html class="block py-5 px-3">Favorites</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Favorites</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li><li class="text-xs group hover:border-b border-black">
+            <a href=/cart.html class="block py-5 px-3">Cart</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Cart</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <li class="text-xs py-2 px-3 bg-red text-white rounded">
+          <a href="" class="link-hover">Sale</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
+    <div class="flex justify-between py-6 container border-b border-gray-100">
+      <picture class="block w-16">
+        <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-full h-full object-contain" alt="">
+      </picture>
+      <button x-on:click="menuOpen = false" aria-label="Close menu">
         <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#user_sprite"></use>
+          <use xlink:href="./assets/sprite.svg#close_sprite"></use>
         </svg>
+      </button>
+    </div>
+    <div x-data="{ openMenu: null }" class="h-full container">
+      <nav class="h-full">
+        <ul class="flex flex-col relative h-full">
+          <li class="py-3  text-xs flex justify-between">
+
+              <a href=/catalog.html  class="flex-1" >Shop</a>
+              <button x-on:click="openMenu === 1 ? openMenu = null : openMenu = 1">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === 1 }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === 1" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                <li class="py-3  text-xs">Category</li><li class="py-3  text-xs">Product</li>
+              </ul>
+            </div><li class="py-3  text-xs flex justify-between">
+
+              <a href=/about.html  class="flex-1" >About</a>
+              <button x-on:click="openMenu === 2 ? openMenu = null : openMenu = 2">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === 2 }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === 2" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                <li class="py-3  text-xs">Category 2 </li><li class="py-3  text-xs">Product 2</li>
+              </ul>
+            </div><li class="py-3  text-xs flex justify-between">
+
+              <a href=/card.html  class="flex-1" >Card</a>
+              <button x-on:click="openMenu === 3 ? openMenu = null : openMenu = 3">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === 3 }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === 3" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                
+              </ul>
+            </div><li class="py-3  text-xs flex justify-between">
+
+              <a href=/favorites.html  class="flex-1" >Favorites</a>
+              <button x-on:click="openMenu === 4 ? openMenu = null : openMenu = 4">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === 4 }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === 4" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                
+              </ul>
+            </div><li class="py-3  text-xs flex justify-between">
+
+              <a href=/cart.html  class="flex-1" >Cart</a>
+              <button x-on:click="openMenu === 5 ? openMenu = null : openMenu = 5">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === 5 }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === 5" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                
+              </ul>
+            </div>
+          <li class="py-3 text-xs text-red">
+            <a href="#" class="flex justify-between">
+              <span>Sale</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flex flex-col py-6 border-b border-t border-gray-100 container">
+      <h4 class="font-serif mb-4">Mein Konto</h4>
+      <div class="flex flex-col gap-2">
+        <a href="" class="btn btn--black-filled uppercase">
+        anmelden
       </a>
-      <a href="" class="block group-hover:bg-red">
-        <svg width="24" height="24" class="fill-none stroke-black transition-all hover:fill-red hover:stroke-red">
-          <use xlink:href="./assets/sprite.svg#favorite-filled_sprite"></use>
-        </svg>
+        <a href="" class="btn btn--black uppercase">
+        registrieren
       </a>
-      <a href="" class="block group-hover:bg-red">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#cart_sprite"></use>
-        </svg>
-      </a>
+      </div>
+    </div>
+    <div class="flex flex-col container py-6 gap-4">
+      <div class="flex flex-col gap-3 ">
+        <div class="flex items-center gap-3">
+          <svg width="24" height="24" class="text-black">
+            <use xlink:href="./assets/sprite.svg#delivery_sprite"></use>
+          </svg>
+          <span class="text-xs">Kostenloser Versand immer ab 69 eur</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg width="24" height="24" class="text-black">
+            <use xlink:href="./assets/sprite.svg#box_sprite"></use>
+          </svg>
+          <span class="text-xs">14 tage Rückaberecht</span>
+        </div>
+      </div>
+      <div class="flex flex-col text-gray-200 text-xs">
+        <p >Ihre Lieferadresse liegt in Deutschland und </p>
+        <p>Ihre Bestellung wird in EUR €  abgerechnet.</p>
+
+      </div>
     </div>
   </div>
-
-  <nav class="border border-t border-gray-100  relative">
-    <ul class="flex flex-wrap justify-center items-center gap-3 ">
-      <li class="text-xs group hover:border-b border-black">
-          <a href=/catalog.html class="block  py-5 px-3">Shop</a>
-          <div class=" transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100   w-screen top-full bg-white absolute inset-x-0 z-60 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50">
-            <div class="bg-white">
-              <div class="container grid grid-cols-4 pb-20 pt-8 ">
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Shop</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Kollektion</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Winter/Herbst 23'</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Quaki Ntro</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">La.moda Mode</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Frau</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Mann</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Kinder</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <a href="" class="flex flex-col gap-3">
-                    <picture class="rounded-lg block overflow-hidden">
-                      <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
-                    </picture>
-                    <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li><li class="text-xs group hover:border-b border-black">
-          <a href=/about.html class="block  py-5 px-3">About</a>
-          <div class=" transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100   w-screen top-full bg-white absolute inset-x-0 z-60 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50">
-            <div class="bg-white">
-              <div class="container grid grid-cols-4 pb-20 pt-8 ">
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">About</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Kollektion</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Winter/Herbst 23'</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Quaki Ntro</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">La.moda Mode</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Frau</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Mann</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Kinder</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <a href="" class="flex flex-col gap-3">
-                    <picture class="rounded-lg block overflow-hidden">
-                      <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
-                    </picture>
-                    <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li><li class="text-xs group hover:border-b border-black">
-          <a href=/card.html class="block  py-5 px-3">Card</a>
-          <div class=" transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100   w-screen top-full bg-white absolute inset-x-0 z-60 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50">
-            <div class="bg-white">
-              <div class="container grid grid-cols-4 pb-20 pt-8 ">
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Card</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Kollektion</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Winter/Herbst 23'</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Quaki Ntro</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">La.moda Mode</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Frau</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Mann</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Kinder</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <a href="" class="flex flex-col gap-3">
-                    <picture class="rounded-lg block overflow-hidden">
-                      <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
-                    </picture>
-                    <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li><li class="text-xs group hover:border-b border-black">
-          <a href=/favorites.html class="block  py-5 px-3">Favorites</a>
-          <div class=" transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100   w-screen top-full bg-white absolute inset-x-0 z-60 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50">
-            <div class="bg-white">
-              <div class="container grid grid-cols-4 pb-20 pt-8 ">
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Favorites</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Kollektion</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Winter/Herbst 23'</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Quaki Ntro</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">La.moda Mode</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Frau</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Mann</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Kinder</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <a href="" class="flex flex-col gap-3">
-                    <picture class="rounded-lg block overflow-hidden">
-                      <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
-                    </picture>
-                    <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li><li class="text-xs group hover:border-b border-black">
-          <a href=/cart.html class="block  py-5 px-3">Cart</a>
-          <div class=" transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100   w-screen top-full bg-white absolute inset-x-0 z-60 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50">
-            <div class="bg-white">
-              <div class="container grid grid-cols-4 pb-20 pt-8 ">
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Cart</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Neu in diesem Monat</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Kollektion</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Winter/Herbst 23'</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Quaki Ntro</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">La.moda Mode</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <nav>
-                    <ul class="flex flex-col gap-4">
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Frau</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Mann</a>
-                      </li>
-                      <li class="text-xs text-gray-300">
-                        <a class="link-hover" href="">Kinder</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                  <h6 class="font-medium text-xs">Einkaufen nach</h6>
-                  <a href="" class="flex flex-col gap-3">
-                    <picture class="rounded-lg block overflow-hidden">
-                      <img src=assets/images/84a62d936126a7baca56.jpg class="block w-full h-full object-cover" alt="">
-                    </picture>
-                    <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      <li class="text-xs py-2 px-3 bg-red text-white rounded">
-        <a href="" class="link-hover">Sale</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+</div>
       
 
 
@@ -455,9 +716,9 @@
         <h1 class="font-serif text-lg">Neuheiten</h1>
         <span class="text-gray-200">150 Produkte</span>
       </div>
-      <div class="flex gap-20">
-        <div class=" max-md:fixed max-md:inset-0 z-40" x-bind:class="{ 'dark-bg max-md:visible': showFilters, 'max-md:invisible': !showFilters }">
-          <aside   class="h-full md:flex md:w-64 flex-col  max-md:overflow-auto max-md:bg-white  max-md:max-w-[300px] max-md:px-4 max-md:transition-transform"  x-bind:class="{ '': showFilters, 'max-md:-translate-x-full': !showFilters }">
+      <div class="flex items-start gap-20">
+        <div class="max-md:fixed max-md:inset-0 z-40 md:sticky md:top-4 max-md:duration-700" x-bind:class="{ 'dark-bg max-md:visible': showFilters, 'max-md:invisible': !showFilters }">
+          <aside class="h-full md:flex md:w-64 flex-col  max-md:overflow-auto max-md:bg-white  max-md:max-w-[300px] max-md:px-4 max-md:transition-transform max-md:duration-700"  x-bind:class="{ '': showFilters, 'max-md:-translate-x-full': !showFilters }" x-cloak>
             <div class="flex justify-between md:hidden pt-6">
               <h3 class="text-xs font-medium">Filters</h3>
               <button x-on:click="showFilters = ! showFilters">
