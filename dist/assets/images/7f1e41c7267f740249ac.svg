@@ -1,0 +1,15 @@
+<svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Facebook_f_logo_(2021) 1" clip-path="url(#clip0_1441_36237)">
+<path id="Vector" d="M13.025 29.85C5.9 28.575 0.5 22.425 0.5 15C0.5 6.75 7.25 0 15.5 0C23.75 0 30.5 6.75 30.5 15C30.5 22.425 25.1 28.575 17.975 29.85L17.15 29.175H13.85L13.025 29.85Z" fill="url(#paint0_linear_1441_36237)"/>
+<path id="Vector_2" d="M21.3496 19.2001L22.0246 15.0001H18.0496V12.0751C18.0496 10.8751 18.4996 9.9751 20.2996 9.9751H22.2496V6.1501C21.1996 6.0001 19.9996 5.8501 18.9496 5.8501C15.4996 5.8501 13.0996 7.9501 13.0996 11.7001V15.0001H9.34961V19.2001H13.0996V29.7751C13.9246 29.9251 14.7496 30.0001 15.5746 30.0001C16.3996 30.0001 17.2246 29.9251 18.0496 29.7751V19.2001H21.3496Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1441_36237" x1="15.5007" y1="28.9567" x2="15.5007" y2="-0.00552583" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0062E0"/>
+<stop offset="1" stop-color="#19AFFF"/>
+</linearGradient>
+<clipPath id="clip0_1441_36237">
+<rect width="30" height="30" fill="white" transform="translate(0.5)"/>
+</clipPath>
+</defs>
+</svg>
