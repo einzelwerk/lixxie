@@ -108,6 +108,10 @@
       verify-email
     </a>
   
+    <a href=contacts.html>
+      contacts
+    </a>
+  
 </div>
 
 <div x-data="{menuOpen : false}">
@@ -131,7 +135,7 @@
       </form>
       <div class="flex justify-center items-center">
         <a href="" class="block">
-          <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
+          <img src=assets/images/bf84e20ace804ef501f1.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
         </a>
       </div>
       <div class="flex gap-5 justify-end">
@@ -513,18 +517,20 @@
     </nav>
   </header>
 
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
-    <div class="flex justify-between py-6 container border-b border-gray-100">
-      <picture class="block w-16">
-        <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-full h-full object-contain" alt="">
-      </picture>
-      <button x-on:click="menuOpen = false" aria-label="Close menu">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#close_sprite"></use>
-        </svg>
-      </button>
+  <div x-show="menuOpen" x-data="{ openMenu: null }" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
+    <div class="border-b border-gray-100">
+      <div class="flex justify-between py-6 container ">
+        <picture class="block w-16">
+          <img src=assets/images/bf84e20ace804ef501f1.svg class="w-full h-full object-contain" alt="">
+        </picture>
+        <button x-on:click="menuOpen = false" aria-label="Close menu">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#close_sprite"></use>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div x-data="{ openMenu: null }" class="h-full container">
+    <div  class="h-full container">
       <nav class="h-full">
         <ul class="flex flex-col relative h-full">
           <li class="py-3  text-xs flex justify-between">
@@ -636,18 +642,20 @@
         </ul>
       </nav>
     </div>
-    <div class="flex flex-col py-6 border-b border-t border-gray-100 container">
-      <h4 class="font-serif mb-4">Mein Konto</h4>
-      <div class="flex flex-col gap-2">
-        <a href="" class="btn btn--black-filled uppercase">
+    <div class="border-b border-t border-gray-100">
+      <div class="flex flex-col py-6  container" x-show="!openMenu" x-transition>
+        <h4 class="font-serif mb-4">Mein Konto</h4>
+        <div class="flex flex-col gap-2">
+          <a href="" class="btn btn--black-filled uppercase">
         anmelden
       </a>
-        <a href="" class="btn btn--black uppercase">
+          <a href="" class="btn btn--black uppercase">
         registrieren
       </a>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col container py-6 gap-4">
+    <div class="flex flex-col container py-6 gap-4"x-show="!openMenu"  x-transition>
       <div class="flex flex-col gap-3 ">
         <div class="flex items-center gap-3">
           <svg width="24" height="24" class="text-black">
@@ -719,7 +727,7 @@
       <div class="flex items-start gap-20">
         <div class="max-md:fixed max-md:inset-0 z-40 md:sticky md:top-4 max-md:duration-700" x-bind:class="{ 'dark-bg max-md:visible': showFilters, 'max-md:invisible': !showFilters }">
           <aside class="h-full md:flex md:w-64 flex-col  max-md:overflow-auto max-md:bg-white  max-md:max-w-[300px] max-md:px-4 max-md:transition-transform max-md:duration-700"  x-bind:class="{ '': showFilters, 'max-md:-translate-x-full': !showFilters }" x-cloak>
-            <div class="flex justify-between md:hidden pt-6">
+            <div class="flex justify-between md:hidden pt-6 pb-3">
               <h3 class="text-xs font-medium">Filters</h3>
               <button x-on:click="showFilters = ! showFilters">
                 <svg width='24' height='24'>
@@ -729,7 +737,7 @@
             </div>
             
 
-              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100">
+              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
                 <summary class="flex text-xs items-center justify-between py-5">
                 Kategorie
                  <svg width="16" height="16" class="transition-all group-open:rotate-180">
@@ -774,7 +782,7 @@
               </details>
             
 
-              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100">
+              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
                 <summary class="flex text-xs items-center justify-between py-5">
                 Kategorie
                  <svg width="16" height="16" class="transition-all group-open:rotate-180">
@@ -819,7 +827,7 @@
               </details>
             
 
-              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100">
+              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
                 <summary class="flex text-xs items-center justify-between py-5">
                 Kategorie
                  <svg width="16" height="16" class="transition-all group-open:rotate-180">
@@ -863,7 +871,7 @@
                 </div>
               </details>
             
-            <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100">
+            <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
               <summary class="flex text-xs items-center justify-between py-5">
                 Price
                  <svg width="16" height="16" class="transition-all group-open:rotate-180">
@@ -947,7 +955,7 @@
           </aside>
         </div>
 
-        <div class="flex flex-1 flex-col">
+        <div class="flex flex-1 flex-col w-full">
           <div class="flex flex-col-reverse gap-6 md:flex-row md:items-center md:justify-between mb-6">
             <div class="flex items-center gap-3">
               <span class="font-medium">150 Produkten</span>
@@ -969,7 +977,7 @@
 
               </div>
               <div x-data="{ open: false }" class="md:ml-auto w-36 relative">
-                <button x-on:click="open = ! open" x-on:click.outside="open = false" x-bind:class="{ 'bg-white': open, '': !open }" class="flex justify-center md:justify-between items-center w-full  py-3 px-4 border border-gray-100 rounded">
+                <button x-on:click="open = ! open" x-on:click.outside="open = false" x-bind:class="{ 'bg-white': open, '': !open }" class="flex justify-center md:justify-between items-center w-full  py-3 px-4 border border-gray-100 rounded hover:bg-white">
                   <span class="text-xs flex  gap-2">
                     <svg width='16' height='16' class="md:hidden">
                       <use xlink:href='./assets/sprite.svg#sort_sprite'></use>
@@ -1042,7 +1050,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1082,7 +1090,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1122,7 +1130,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1162,7 +1170,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1202,7 +1210,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1242,7 +1250,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1282,7 +1290,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1322,7 +1330,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1362,7 +1370,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1402,7 +1410,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1442,7 +1450,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1482,7 +1490,7 @@
   </div>
   <a href="#" class="flex flex-col gap-1">
     <h2 class="text-xs font-medium md:text-sm">Travis Scott x Air Jordan Graphic Hoody</h2>
-    <p class="text-gray-200">Mid Gray</p>
+    <p class="text-gray-300">Mid Gray</p>
     <p class="font-serif flex gap-[6px] ">
       <span class=>€177,51</span>
       <span class="relative before:content[''] before:block before:h-[1.5px] before:bg-red before:w-full before:absolute before:top-1/2 before:-translate-y-1/2">109,00€</span>
@@ -1492,7 +1500,7 @@
 </article>
             
           </div>
-          <div class="flex justify-between items-center">
+          <div class="flex justify-center items-center">
 
             <nav class="pagination" aria-label="Pagination">
               <ul class="flex gap-1">
@@ -1507,18 +1515,6 @@
                 
                   <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all ">
                     <a class="flex items-center justify-center w-full h-full" href="/3/" aria-label="Page 3">3</a>
-                  </li>
-                
-                  <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all ">
-                    <a class="flex items-center justify-center w-full h-full" href="/4/" aria-label="Page 4">4</a>
-                  </li>
-                
-                  <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all ">
-                    <a class="flex items-center justify-center w-full h-full" href="/5/" aria-label="Page 5">5</a>
-                  </li>
-                
-                  <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all ">
-                    <a class="flex items-center justify-center w-full h-full" href="/6/" aria-label="Page 6">6</a>
                   </li>
                 
                   <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all ">
@@ -1541,11 +1537,11 @@
   <div class="bg-white py-12 md:py-20">
     <div class="container flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
       <div class="flex flex-col max-w-xl">
-        <h4 class="font-serif text-lg md:text-xl mb-6">-10% für die erste Bestellung</h4>
-        <p class="text-sm mb-12">Seien Sie der erste, der über besondere Rabatte und Angebote informiert wird.</p>
+        <h4 class="font-serif text-lg md:text-xl mb-4 md:mb-6">-10% für die erste Bestellung</h4>
+        <p class="text-sm mb-6 md:mb-12">Seien Sie der erste, der über besondere Rabatte und Angebote informiert wird.</p>
         <form action="" class="flex gap-3 md:pr-20">
           <input type="text" class="flex-1 py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="E-Mail" />
-          <button class="btn btn--black">
+          <button class="btn py-3  px-4 btn--black">
             <svg width="24" height="24" class="md:hidden">
               <use xlink:href="./assets/sprite.svg#check_sprite"></use>
             </svg>
@@ -1554,7 +1550,7 @@
         </form>
       </div>
       <picture class="block w-full md:max-w-[600px]">
-        <img class="w-full h-full object-contain" src=assets/images/7d9429c9d2e04d658b5c.png alt="">
+        <img class="w-full h-full object-contain" src=assets/images/20e6efcbe7e769ae7d72.png alt="">
       </picture>
     </div>
   </div>
@@ -1570,7 +1566,7 @@
     <div class="flex flex-col gap-10">
       <div class="flex justify-center items-center max-w-[76px]">
         <a href="" class="block">
-          <img src=assets/images/4007396ea4c2dee53b9f.svg alt="">
+          <img src=assets/images/bf84e20ace804ef501f1.svg alt="">
         </a>
       </div>
       <div class="flex flex-col max-w-[275px]">
@@ -1660,16 +1656,16 @@
   <div class="flex flex-col gap-6 md:flex-row mt-12 md:mt-28 md:justify-between">
     <div class="flex gap-5">
       <picture class="flex items-center justify-center">
-        <img src=assets/images/145b73f8dd9f486f6955.svg alt="">
+        <img src=assets/images/a70b4a875534c20b2ab7.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/52eea4a13f067fc0dac6.svg alt="">
+        <img src=assets/images/1cf89a3ca074f5720bfb.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/5e293b7bd151a940f805.svg alt="">
+        <img src=assets/images/0d34206cffb30e4bba34.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/8c0ef8e5b84fb4adc8de.svg alt="">
+        <img src=assets/images/3ac0dd9c208775208bf2.svg alt="">
       </picture>
     </div>
     <nav class="block">

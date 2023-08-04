@@ -1,8 +1,0 @@
-export default {
-      id: "deliverybox_sprite-usage",
-      viewBox: "0 0 24 24",
-      url: "/assets/" + "C:\\Users\\user\\Desktop\\work\\webpack\\src\\assets\\icons\\deliverybox_sprite.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

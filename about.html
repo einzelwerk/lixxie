@@ -108,6 +108,10 @@
       verify-email
     </a>
   
+    <a href=contacts.html>
+      contacts
+    </a>
+  
 </div>
 
 <div x-data="{menuOpen : false}">
@@ -131,7 +135,7 @@
       </form>
       <div class="flex justify-center items-center">
         <a href="" class="block">
-          <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
+          <img src=assets/images/bf84e20ace804ef501f1.svg class="w-24 h-7 md:w-36 md:h-12" alt="">
         </a>
       </div>
       <div class="flex gap-5 justify-end">
@@ -513,18 +517,20 @@
     </nav>
   </header>
 
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
-    <div class="flex justify-between py-6 container border-b border-gray-100">
-      <picture class="block w-16">
-        <img src=assets/images/4007396ea4c2dee53b9f.svg class="w-full h-full object-contain" alt="">
-      </picture>
-      <button x-on:click="menuOpen = false" aria-label="Close menu">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#close_sprite"></use>
-        </svg>
-      </button>
+  <div x-show="menuOpen" x-data="{ openMenu: null }" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
+    <div class="border-b border-gray-100">
+      <div class="flex justify-between py-6 container ">
+        <picture class="block w-16">
+          <img src=assets/images/bf84e20ace804ef501f1.svg class="w-full h-full object-contain" alt="">
+        </picture>
+        <button x-on:click="menuOpen = false" aria-label="Close menu">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#close_sprite"></use>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div x-data="{ openMenu: null }" class="h-full container">
+    <div  class="h-full container">
       <nav class="h-full">
         <ul class="flex flex-col relative h-full">
           <li class="py-3  text-xs flex justify-between">
@@ -636,18 +642,20 @@
         </ul>
       </nav>
     </div>
-    <div class="flex flex-col py-6 border-b border-t border-gray-100 container">
-      <h4 class="font-serif mb-4">Mein Konto</h4>
-      <div class="flex flex-col gap-2">
-        <a href="" class="btn btn--black-filled uppercase">
+    <div class="border-b border-t border-gray-100">
+      <div class="flex flex-col py-6  container" x-show="!openMenu" x-transition>
+        <h4 class="font-serif mb-4">Mein Konto</h4>
+        <div class="flex flex-col gap-2">
+          <a href="" class="btn btn--black-filled uppercase">
         anmelden
       </a>
-        <a href="" class="btn btn--black uppercase">
+          <a href="" class="btn btn--black uppercase">
         registrieren
       </a>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col container py-6 gap-4">
+    <div class="flex flex-col container py-6 gap-4"x-show="!openMenu"  x-transition>
       <div class="flex flex-col gap-3 ">
         <div class="flex items-center gap-3">
           <svg width="24" height="24" class="text-black">
@@ -744,7 +752,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:flex-row md:gap-10">
                 <div class="flex flex-col items-center gap-3 md:gap-8">
                     <picture class="block w-[72px] h-[72px]">
-                        <img src=assets/images/1b2e36781dac19d25a61.svg alt="">
+                        <img src=assets/images/fb0a174f02e22e07caeb.svg alt="">
                     </picture>
                     <div class="flex flex-col items-center gap-1 md:gap-3">
                         <h4 class="font-serif text-center text-base">Praktische Passform</h4>
@@ -753,7 +761,7 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 md:gap-8">
                     <picture class="block w-[72px] h-[72px]">
-                        <img src=assets/images/c5f909f314e0b9e7bd69.svg alt="">
+                        <img src=assets/images/8da08096bcdbee514c42.svg alt="">
                     </picture>
                     <div class="flex flex-col items-center gap-1 md:gap-3">
                         <h4 class="font-serif text-center text-base">Praktische Passform</h4>
@@ -762,7 +770,7 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 md:gap-8">
                     <picture class="block w-[72px] h-[72px]">
-                        <img src=assets/images/a4503603bb2437465a2f.svg alt="">
+                        <img src=assets/images/514d65d294395de091a5.svg alt="">
                     </picture>
                     <div class="flex flex-col items-center gap-1 md:gap-3">
                         <h4 class="font-serif text-center text-base">Praktische Passform</h4>
@@ -771,7 +779,7 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 md:gap-8">
                     <picture class="block w-[72px] h-[72px]">
-                        <img src=assets/images/60ee19abba896922d4d1.svg alt="">
+                        <img src=assets/images/0c0efa98d335f342a9de.svg alt="">
                     </picture>
                     <div class="flex flex-col items-center gap-1 md:gap-3">
                         <h4 class="font-serif text-center text-base">Praktische Passform</h4>
@@ -788,10 +796,10 @@
                     <div class="flex flex-col items-center gap-8 md:gap-0 md:flex-row group group-odd md:odd:flex-row-reverse">
                         <div class="flex flex-1 flex-col md:group-odd:pl-24 md:group-even:pr-24">
                             <h2 class="font-serif text-lg mb-3 md:mb-8">Unsere Philosophie</h2>
-                            <div class="flex flex-col items-start gap-4 js-toggle-p">
-                                <p class="last-of-type:hidden md:last-of-type:block">Welcome to Lixxi, a contemporary clothing brand from Germany that blends timeless design with modern aesthetic to create versatile and functional pieces for men and women. Our passion for fashion and attention to detail is evident in every stitch, fabric and cut that we use in our collections.</p>
-                                <p class="last-of-type:hidden md:last-of-type:block">Founded in 2012, Lixxi was born out of a desire to create clothing that is both stylish and sustainable. We believe that fashion should not come at the cost of the environment, and we strive to make our production processes as eco-friendly as possible. From using organic and recycled materials to reducing waste and carbon emissions, we are committed to making a positive impact on the planet.</p>
-                                <button type="button" class="font-medium  md:hidden">Show more</button>
+                            <div class="flex flex-col items-start gap-4 " x-data="{showMore: false}">
+                                <p class=" md:last-of-type:block">Welcome to Lixxi, a contemporary clothing brand from Germany that blends timeless design with modern aesthetic to create versatile and functional pieces for men and women. Our passion for fashion and attention to detail is evident in every stitch, fabric and cut that we use in our collections.</p>
+                                <p class="md:last-of-type:block" x-show="showMore">Founded in 2012, Lixxi was born out of a desire to create clothing that is both stylish and sustainable. We believe that fashion should not come at the cost of the environment, and we strive to make our production processes as eco-friendly as possible. From using organic and recycled materials to reducing waste and carbon emissions, we are committed to making a positive impact on the planet.</p>
+                                <button type="button" class="font-medium  md:hidden" x-on:click="showMore  = ! showMore" x-text="showMore ? 'Show less' : 'Show more'">Show more</button>
                             </div>
                         </div>
                         <picture class="block flex-1">
@@ -802,10 +810,10 @@
                     <div class="flex flex-col items-center gap-8 md:gap-0 md:flex-row group group-odd md:odd:flex-row-reverse">
                         <div class="flex flex-1 flex-col md:group-odd:pl-24 md:group-even:pr-24">
                             <h2 class="font-serif text-lg mb-3 md:mb-8">Unsere Philosophie</h2>
-                            <div class="flex flex-col items-start gap-4 js-toggle-p">
-                                <p class="last-of-type:hidden md:last-of-type:block">Welcome to Lixxi, a contemporary clothing brand from Germany that blends timeless design with modern aesthetic to create versatile and functional pieces for men and women. Our passion for fashion and attention to detail is evident in every stitch, fabric and cut that we use in our collections.</p>
-                                <p class="last-of-type:hidden md:last-of-type:block">Founded in 2012, Lixxi was born out of a desire to create clothing that is both stylish and sustainable. We believe that fashion should not come at the cost of the environment, and we strive to make our production processes as eco-friendly as possible. From using organic and recycled materials to reducing waste and carbon emissions, we are committed to making a positive impact on the planet.</p>
-                                <button type="button" class="font-medium  md:hidden">Show more</button>
+                            <div class="flex flex-col items-start gap-4 " x-data="{showMore: false}">
+                                <p class=" md:last-of-type:block">Welcome to Lixxi, a contemporary clothing brand from Germany that blends timeless design with modern aesthetic to create versatile and functional pieces for men and women. Our passion for fashion and attention to detail is evident in every stitch, fabric and cut that we use in our collections.</p>
+                                <p class="md:last-of-type:block" x-show="showMore">Founded in 2012, Lixxi was born out of a desire to create clothing that is both stylish and sustainable. We believe that fashion should not come at the cost of the environment, and we strive to make our production processes as eco-friendly as possible. From using organic and recycled materials to reducing waste and carbon emissions, we are committed to making a positive impact on the planet.</p>
+                                <button type="button" class="font-medium  md:hidden" x-on:click="showMore  = ! showMore" x-text="showMore ? 'Show less' : 'Show more'">Show more</button>
                             </div>
                         </div>
                         <picture class="block flex-1">
@@ -866,7 +874,7 @@
         <div class="section pb-0">
             <div class="grid md:grid-cols-2 gap-3 md:gap-6">
                 <div class="flex flex-col px-4 md:px-16 py-8 md:py-28 items-center justify-center bg-gradient-to-r from-[#CECAE1] to-[#F6C6D4]  rounded-lg">
-                    <h3 class="font-serif text-lg mb-3 md:mb-6">
+                    <h3 class="font-serif text-lg mb-3 md:mb-6 text-center">
                     Lixxi: made with love and care
                 </h3>
                     <p class="text-base text-center mb-8 md:mb-10">The German clothing brand we are discussing is known for its high-quality materials and sleek designs. Their clothing is made to last, with a focus on durability and comfort. </p>
@@ -1134,11 +1142,11 @@
   <div class="bg-white py-12 md:py-20">
     <div class="container flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
       <div class="flex flex-col max-w-xl">
-        <h4 class="font-serif text-lg md:text-xl mb-6">-10% für die erste Bestellung</h4>
-        <p class="text-sm mb-12">Seien Sie der erste, der über besondere Rabatte und Angebote informiert wird.</p>
+        <h4 class="font-serif text-lg md:text-xl mb-4 md:mb-6">-10% für die erste Bestellung</h4>
+        <p class="text-sm mb-6 md:mb-12">Seien Sie der erste, der über besondere Rabatte und Angebote informiert wird.</p>
         <form action="" class="flex gap-3 md:pr-20">
           <input type="text" class="flex-1 py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="E-Mail" />
-          <button class="btn btn--black">
+          <button class="btn py-3  px-4 btn--black">
             <svg width="24" height="24" class="md:hidden">
               <use xlink:href="./assets/sprite.svg#check_sprite"></use>
             </svg>
@@ -1147,7 +1155,7 @@
         </form>
       </div>
       <picture class="block w-full md:max-w-[600px]">
-        <img class="w-full h-full object-contain" src=assets/images/7d9429c9d2e04d658b5c.png alt="">
+        <img class="w-full h-full object-contain" src=assets/images/20e6efcbe7e769ae7d72.png alt="">
       </picture>
     </div>
   </div>
@@ -1163,7 +1171,7 @@
     <div class="flex flex-col gap-10">
       <div class="flex justify-center items-center max-w-[76px]">
         <a href="" class="block">
-          <img src=assets/images/4007396ea4c2dee53b9f.svg alt="">
+          <img src=assets/images/bf84e20ace804ef501f1.svg alt="">
         </a>
       </div>
       <div class="flex flex-col max-w-[275px]">
@@ -1253,16 +1261,16 @@
   <div class="flex flex-col gap-6 md:flex-row mt-12 md:mt-28 md:justify-between">
     <div class="flex gap-5">
       <picture class="flex items-center justify-center">
-        <img src=assets/images/145b73f8dd9f486f6955.svg alt="">
+        <img src=assets/images/a70b4a875534c20b2ab7.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/52eea4a13f067fc0dac6.svg alt="">
+        <img src=assets/images/1cf89a3ca074f5720bfb.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/5e293b7bd151a940f805.svg alt="">
+        <img src=assets/images/0d34206cffb30e4bba34.svg alt="">
       </picture>
       <picture class="flex items-center justify-center">
-        <img src=assets/images/8c0ef8e5b84fb4adc8de.svg alt="">
+        <img src=assets/images/3ac0dd9c208775208bf2.svg alt="">
       </picture>
     </div>
     <nav class="block">
