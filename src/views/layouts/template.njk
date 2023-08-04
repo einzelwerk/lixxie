@@ -8,15 +8,48 @@
   </head>
   <body>
     <div class="root">
+      {% block macros %}
+        {% macro breadcrumb(link, text) %}
+          {% if link %}
+            <a class="breadcrumbs__link" itemprop="item" href="#" href="{{ link }}">{{ text }}</a>
+          {% else %}
+            <span class="breadcrumbs__name" itemprop="name">{{ text }}</span>
+          {% endif %}
+        {% endmacro %}
+
+        {% macro breadcrumbs(items) %}
+          {% if items.length %}
+            <nav class="breadcrumbs">
+              <ul class="breadcrumbs__list" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                {% for item in items %}
+                  <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem">
+                    {{ breadcrumb(item.link, item.text) }}
+                    <meta itemprop="position" content="#"/>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+
+          {% endif %}
+        {% endmacro %}
+      {% endblock %}
+
+
       {% block header %}
         {% include 'header.njk' %}
       {% endblock %}
+
+
       <main class="main">
+
         {% block content %}{% endblock %}
+
       </main>
+
       {% block footer %}
         {% include 'footer.njk' %}
       {% endblock %}
+      
     </div>
   </body>
 </html>

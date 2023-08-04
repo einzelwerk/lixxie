@@ -1,0 +1,21 @@
+{% extends "template.njk" %}
+{% block content %}
+  <section class="">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-1 flex max-lg:container justify-end items-center pt-16 md:pt-14 max-lg:pb-20 lg:pr-24">
+        <div class="w-full max-w-xl flex flex-col items-center">
+          <picture class="block w-20 h-20 rounded-full overflow-hidden mb-6 md:mb-12">
+            <img src={% static './images/email-big.svg' %} alt="" class="w-full h-full object-cover">
+          </picture>
+          <h1 class="font-serif text-lg mb-6">Check your E-Mail-Addresse</h1>
+          <p class="text-center mb-6 md:mb-20">We've sent an reset link in the email to the address provided by you before. Can't find it? Check your junk / spam folder, please.</p>
+          <a href="" class="underline text-xs">I don’t have reset password e-mail</a>
+        </div>
+      </div>
+      <picture class="flex-1 block h-screen">
+        <img src={% static './images/forgot.jpg' %} class="w-full h-full object-cover" alt="">
+      </picture>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "template.njk" %} {% block content %}
+<section class="">
+  <div class="flex flex-col md:flex-row">
+    <div class="flex-1 flex max-lg:container justify-end pt-8 md:pt-14 max-lg:pb-20 lg:pr-24">
+      <div class="w-full max-w-xl flex flex-col">
+        <h1 class="font-serif text-lg mb-5">Forgot your password?</h1>
+        <p class="mb-12">Enter your email address and we'll send you a link to reset your password</p>
+        <form class="flex flex-col gap-6 mb-7">
+          <label class="flex flex-col gap-3" for="">
+            <span class="text-xs">E-mail-Adresse </span>
+            <input
+              class="bg-[transparent] py-[14px] w-full border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+              type="text"
+              placeholder="Max Masterman"
+            />
+          </label>
+          <button class="btn btn--black-filled uppercase">
+            Reset password
+          </button>
+        </form>
+        <a href="" class="text-sm uppercase text-center font-medium">
+          Back to sign in
+        </a>
+      </div>
+    </div>
+    <picture class="flex-1 block h-screen"> <img src={% static './images/forgot.jpg' %} class="w-full h-full object-cover" alt=""> </picture>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,232 @@
+{% extends "template.njk" %}
+
+{% block content %}
+
+  <section class="section container pb-0">
+    {% set items = [
+      {
+        link: "/",
+        text: "Home"
+      }, {
+        link: '',
+        text: "Neuheiten"
+      }
+    ] %}
+
+    {{ breadcrumbs(items) }}
+  </section>
+
+  <section class="section container" x-data="{ showFilters: false }">
+    <div class="section pt-0">
+      <div class="flex gap-5 items-end mb-8">
+        <h1 class="font-serif text-lg">Neuheiten</h1>
+        <span class="text-gray-200">150 Produkte</span>
+      </div>
+      <div class="flex items-start gap-20">
+        <div class="max-md:fixed max-md:inset-0 z-40 md:sticky md:top-4 max-md:duration-700" x-bind:class="{ 'dark-bg max-md:visible': showFilters, 'max-md:invisible': !showFilters }">
+          <aside class="h-full md:flex md:w-64 flex-col  max-md:overflow-auto max-md:bg-white  max-md:max-w-[300px] max-md:px-4 max-md:transition-transform max-md:duration-700"  x-bind:class="{ '': showFilters, 'max-md:-translate-x-full': !showFilters }" x-cloak>
+            <div class="flex justify-between md:hidden pt-6 pb-3">
+              <h3 class="text-xs font-medium">Filters</h3>
+              <button x-on:click="showFilters = ! showFilters">
+                <svg width='24' height='24'>
+                  <use xlink:href='./assets/sprite.svg#close_sprite'></use>
+                </svg>
+              </button>
+            </div>
+            {% for item in[1, 2, 3] %}
+
+              <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
+                <summary class="flex text-xs items-center justify-between py-5">
+                Kategorie
+                 <svg width="16" height="16" class="transition-all group-open:rotate-180">
+                    <use xlink:href="./assets/sprite.svg#arrow-d_sprite"></use>
+                  </svg>
+                </summary>
+                <div class="pb-5">
+                  {% for item in[1, 2, 3, 4] %}
+                    <label class="flex gap-3 py-2 cursor-pointer">
+                      <input class="peer sr-only" id={{"checkbox-" + item }} type="checkbox"/>
+                      <span class="block w-4 h-4 flex-none border border-gray-100 rounded peer-checked:border-black peer-checked:bg-checked bg-no-repeat bg-[8px,6px] bg-center"></span>
+                      <div class="flex items-center" for={{"checkbox-" + item}}>
+                        <span class="text-xs">XXS</span>
+                      </div>
+                    </label>
+                  {% endfor %}
+                </div>
+              </details>
+            {% endfor %}
+            <details class="max-w-full w-full block group cursor-pointer border-b border-gray-100" open>
+              <summary class="flex text-xs items-center justify-between py-5">
+                Price
+                 <svg width="16" height="16" class="transition-all group-open:rotate-180">
+                  <use xlink:href="./assets/sprite.svg#arrow-d_sprite"></use>
+                </svg>
+              </summary>
+              <div class="pb-5">
+
+                <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                  <div>
+                    <input type="range"
+                        step="100"
+                        x-bind:min="min" x-bind:max="max"
+                        x-on:input="mintrigger"
+                        x-model="minprice"
+                        class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+                    <input type="range" 
+                        step="100"
+                        x-bind:min="min" x-bind:max="max"
+                        x-on:input="maxtrigger"
+                        x-model="maxprice"
+                        class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+                    <div class="relative z-10 h-[2px]">
+
+                      <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
+
+                      <div class="absolute z-20 top-0 bottom-0 rounded-md bg-black" x-bind:style="'right:'+maxthumb+'%; left:'+minthumb+'%'"></div>
+
+                      <div class="absolute z-30 w-5 h-5 top-1/2 -translate-y-1/2  bg-black rounded-full" x-bind:style="'left: '+minthumb+'%'"></div>
+
+                      <div class="absolute z-30 w-5 h-5 top-1/2 -translate-y-1/2  bg-black rounded-full " x-bind:style="'right: '+maxthumb+'%'"></div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="flex justify-between items-center py-5 gap-10">
+                    <div class="relative flex-1">
+                      <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice" class="px-2 py-2 bg-[transparent] border border-gray-100 text-xs rounded w-full">
+                      <span class="absolute right-2 inset-y-0 flex items-center text-[0.75rem]">
+                      €
+                    </span>
+                    </div>
+                    <div class="relative flex-1">
+                      <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice" class="px-2 py-2 bg-[transparent] border border-gray-100 text-xs rounded w-full">
+                      <span class="absolute right-2 inset-y-0 flex items-center text-[0.75rem]">
+                      €
+                    </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <script>
+                  function range() {
+                    return {
+                      minprice: 1000,
+                      maxprice: 7000,
+                      min: 100,
+                      max: 10000,
+                      minthumb: 0,
+                      maxthumb: 0,
+
+                      mintrigger() {
+                        this.minprice = Math.min(this.minprice, this.maxprice - 500);
+                        this.minthumb = ((this.minprice - this.min) / (this.max - this.min)) * 100;
+                      },
+
+                      maxtrigger() {
+                        this.maxprice = Math.max(this.maxprice, this.minprice + 500);
+                        this.maxthumb = 100 - (((this.maxprice - this.min) / (this.max - this.min)) * 100);
+                      }
+                    }
+                  }
+                </script>
+
+              </div>
+            </details>
+          </aside>
+        </div>
+
+        <div class="flex flex-1 flex-col w-full">
+          <div class="flex flex-col-reverse gap-6 md:flex-row md:items-center md:justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <span class="font-medium">150 Produkten</span>
+              <button class="text-xs text-gray-200 hover:text-black">Clear filters</button>
+            </div>
+            <div class="flex gap-3">
+              <div  class="md:hidden w-36 relative">
+                <button x-on:click="showFilters = ! showFilters"  x-bind:class="{ 'bg-white': showFilters, '': !showFilters }" class="flex justify-center md:justify-between items-center w-full  py-3 px-4 border border-gray-100 rounded">
+                  <span class="text-xs flex  gap-2">
+                    <svg width='16' height='16' class="md:hidden">
+                      <use xlink:href='./assets/sprite.svg#filter_sprite'></use>
+                    </svg>
+                     Filters
+                    </span>
+                  <svg width='10' height='10' x-bind:class="{ 'rotate-180': open, '': !open }" class="hidden md:block">
+                    <use xlink:href='./assets/sprite.svg#CaretRight_sprite'></use>
+                  </svg>
+                </button>
+
+              </div>
+              <div x-data="{ open: false }" class="md:ml-auto w-36 relative">
+                <button x-on:click="open = ! open" x-on:click.outside="open = false" x-bind:class="{ 'bg-white': open, '': !open }" class="flex justify-center md:justify-between items-center w-full  py-3 px-4 border border-gray-100 rounded hover:bg-white">
+                  <span class="text-xs flex  gap-2">
+                    <svg width='16' height='16' class="md:hidden">
+                      <use xlink:href='./assets/sprite.svg#sort_sprite'></use>
+                    </svg>
+                      Sort
+                    </span>
+                  <svg width='10' height='10' x-bind:class="{ 'rotate-180': open, '': !open }" class="hidden md:block">
+                    <use xlink:href='./assets/sprite.svg#CaretRight_sprite'></use>
+                  </svg>
+                </button>
+
+                <div x-show="open" x-bind:class="{ 'visible': open, 'hidden': !open }" x-transition class="absolute flex flex-col w-full top-full z-30 rounded  overflow-hidden mt-1 border border-gray-100 bg-white ">
+                  <fieldset class="flex flex-col ">
+                    {% for item in[1, 2, 3, 4] %}
+                      <label class="flex px-4 py-2 hover:bg-gray-50 cursor-pointer" x-on:click="open = false">
+                        <input type="radio" name="category" class="sr-only" id="">
+                        <span class="text-xs">Category {{ item }}</span>
+                      </label>
+                    {% endfor %}
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-y-6 gap-x-3 md:gap-y-10 md:gap-x-5 md:grid-cols-2 lg:grid-cols-3 mb-8 md:mb-14">
+            {% for item in[
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ] %}
+              {% include "card.njk" %}
+            {% endfor %}
+          </div>
+          <div class="flex justify-center items-center">
+
+            <nav class="pagination" aria-label="Pagination">
+              <ul class="flex gap-1">
+                {% for page in[
+                  1,
+                  2,
+                  3,
+   
+                  "...",
+                  7
+                ] %}
+                  <li class="flex items-center justify-center w-12 h-10 text-xs rounded-md hover:bg-gray-100 transition-all {% if loop.index == 1 %}bg-black text-white hover:bg-black{% endif %}">
+                    <a class="flex items-center justify-center w-full h-full" href="/{{ page }}/" {% if loop.index == 1 %}aria-label="Page {{ page }}" aria-current="page"{% else %}aria-label="Page {{ page }}"{% endif %}>{{ page }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "newsletter.njk" %}
+{% endblock %}

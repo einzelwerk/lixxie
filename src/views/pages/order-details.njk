@@ -1,0 +1,180 @@
+{% extends "template.njk" %} {% block content %}
+<section class="section container">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+    <aside class="flex flex-col gap-8 flex-none md:w-48">
+      <h3 class="font-serif text-md hidden md:block">My account</h3>
+      <nav class="flex">
+        <ul class="flex overflow-auto sm:flex-col gap-5">
+          <li
+            class="flex text-gray-300 active max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#deliverybox_sprite"></use>
+              </svg>
+              <span>Orders</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#recipt_sprite"></use>
+              </svg>
+              <span>Details</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#shop_sprite"></use>
+              </svg>
+              <span>Addresses</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#message_sprite"></use>
+              </svg>
+              <span>Preferences</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#alarm_sprite"></use>
+              </svg>
+              <span>Notifications</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="flex flex-col gap-10 w-full">
+      <a href="" class="mb-2 flex items-center gap-3 text-gray-200 hover:text-black transition-colors">
+        <svg width="16" height="16">
+          <use xlink:href="./assets/sprite.svg#arrow-back_sprite"></use>
+        </svg>
+        Back to orders
+      </a>
+      <div class="flex items-center gap-4 font-serif">
+        <h1 class="text-lg">Order details</h1>
+        <span class="text-gray-200 text-md">6 items</span>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-0 lg:gap-16">
+        <div class="border-t border-gray-100 flex flex-col">
+          {% for item in[1, 2, 3] %}
+          <div class="flex items-start md:items-stretch gap-6 py-6 md:py-8 border-b border-gray-100 last:border-none">
+            <picture class="block flex-none rounded-lg overflow-hidden w-24 md:w-32">
+              <img class="w-full h-full object-cover" src={% static './images/cart.jpg' %} alt="">
+            </picture>
+            <div class="flex flex-col flex-1 justify-between">
+              <div class="flex flex-col gap-2 md:gap-3">
+                <div class="flex flex-col gap-3">
+                  <h2 class="text-sm font-medium">Kurze Steppjacke mit Kapuze Willer Mokkafarben</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                  <data class="text-sm font-serif">49,00€</data>
+                  <span class="text-xs text-gray-200">inkl. MwSt.</span>
+                </div>
+                <div class="flex flex-wrap gap-1 -mx-2">
+                  {% for item in[1, 2, 3] %}
+                  <div class="flex gap-1 text-[10px] md:text-xs px-2 last:border-none border-r border-gray-200">
+                    <span class="text-gray-200">Farbe:</span>
+                    <span class="font-medium">White</span>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="flex  md:w-[424px] flex-col">
+          <div class="flex flex-col gap-5 py-6 md:py-8 border-t border-gray-100">
+            <h3 class="font-serif text-base">Order status</h3>
+            <div class="flex gap-2">
+              <span class="text-gray-200 text-sm">Status</span>
+              <span class="text-sm">In delivery</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 md:py-8 border-t border-gray-100">
+            <h3 class="font-serif text-base">Summary</h3>
+            <div class="flex justify-between gap-2">
+              <span class="text-sm">Status</span>
+              <span class="text-sm">6,99€</span>
+            </div>
+            <div class="flex justify-between gap-2">
+              <div class="flex flex-col gap-1">
+                <span class="text-sm">Standard Delivery</span>
+                <span class="text-gray-300 text-xs">(normally 4-5 business days)</span>
+              </div>
+              <span class="text-sm">147,00€</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <div class="flex justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="text-base font-medium">Total</span>
+                <span class="text-gray-300 text-xs">inkl. MwSt.</span>
+              </div>
+              <span class="text-base font-medium">153,99€</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <h3 class="font-serif text-base">Delivery address</h3>
+            <div class="flex flex-col gap-2">
+              <span class="font-medium">John Smith</span>
+              <address class="text-sm not-italic">1226 University Dr Menio Park</address>
+              <span>Riga 908506 </span>
+              <span>Latvia </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <h3 class="font-serif text-base">Billing address</h3>
+            <div class="flex flex-col gap-2">
+              <span class="font-medium">Same billing address as delivery</span>
+              <span>1226 University Dr Menio Park</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <h3 class="font-serif text-base">Payment</h3>
+            <div class="flex flex-col gap-2">
+              <img src={% static './images/paypal.svg' %} class="w-24 mb-2" alt="">
+              <span>Card ending 0127</span>
+              <span>Expiration date 07/26</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <h3 class="font-serif text-base">Shipping Method</h3>
+            <div class="flex flex-col gap-2">
+              <img src={% static './images/dhl.svg' %} class="w-24 mb-2" alt="">
+              <span>Preferred Method</span>
+              <span>U.K. Standard</span>
+              <span class="text-gray-300">(normally 4-5 business days)</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5 py-6 border-t border-gray-100">
+            <h3 class="font-serif text-base">Need help?</h3>
+            <div class="flex items-start flex-col gap-3">
+              <a href="" class="link-hover">Shipping and delivery</a>
+              <a href="" class="link-hover">Cancelling an order</a>
+              <a href="" class="link-hover">Return policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

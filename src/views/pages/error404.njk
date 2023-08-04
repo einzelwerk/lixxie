@@ -1,0 +1,18 @@
+{% extends "template.njk" %}
+{% block content %}
+  <section class="h-screen relative">
+    <picture class="block w-full h-full">
+      <img src={% static './images/404.jpg' %} alt="" class="w-full h-full object-cover">
+    </picture>
+    <div class="absolute inset-0 flex justify-center items-center">
+      <div class="flex flex-col items-center max-w-sm">
+        <h1 class="font-serif text-xl mb-6">Oops</h1>
+        <p class="text-gray-300 text-center text-base mb-10">Something went wrong. The page you are looking for is no longer available.</p>
+        <a href="" class="btn btn--black-filled uppercase">
+        Start shopping
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "template.njk" %}
+{% block content %}
+  <section class="">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-1 flex max-lg:container justify-end items-center pt-16 md:pt-14 max-lg:pb-20 lg:pr-24">
+        <div class="w-full max-w-xl flex flex-col items-center">
+          <picture class="block w-20 h-20 rounded-full overflow-hidden mb-6 md:mb-12">
+            <img src={% static './images/check-big.svg' %} alt="" class="w-full h-full object-cover">
+          </picture>
+          <h1 class="font-serif text-lg mb-6 text-center">You’ve successfully reset your password!</h1>
+          <p class="text-center mb-6 md:mb-10">Thank you very much for changing your password, now you can log into your account, have a nice day and happy shopping</p>
+          <a href="" class="btn btn--black-filled uppercase md:px-24 text-xs">go to sign in</a>
+        </div>
+      </div>
+      <picture class="flex-1 block h-screen">
+        <img src={% static './images/forgot.jpg' %} class="w-full h-full object-cover" alt="">
+      </picture>
+    </div>
+  </section>
+
+{% endblock %}

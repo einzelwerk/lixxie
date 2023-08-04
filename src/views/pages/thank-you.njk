@@ -1,0 +1,123 @@
+{% extends "template.njk" %}
+{% block content %}
+  <section class="section pb-0">
+    <div class="flex flex-col items-center max-w-4xl mx-auto">
+      <h1 class="font-serif mb-5 text-xl">Vielen Dank für Ihre Bestellung!</h1>
+      <p class="text-base mb-8">Bestellungsnummer <span class="underline">12732-000012</span></p>
+      <p class="text-center mb-3 md:mb-8">
+      Wir haben eine E-Mail mit Ihrer Bestellbestätigung und Rechnung an youremail.mail.com geschickt. Wenn die E-Mail nicht innerhalb von zwei
+      Minuten bei Ihnen angekommen ist, überprüfen Sie bitte Ihren Spam-Ordner.
+    </p>
+      <div class="flex items-center gap-1">
+        <svg width="24" height="24">
+          <use xlink:href="./assets/sprite.svg#calendar_sprite"></use>
+        </svg>
+        <span> Zeit der Bestellung </span>
+        <span class="font-medium"> 16.02.2023 13:35 </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section pt-0">
+      <div class="flex flex-col lg:flex-row md:gap-24">
+        <div class="pt-8 border-t border-gray-100 flex flex-col w-full max-w-3xl">
+          <div class="py-8 first:pt-0 border-b border-gray-100 flex flex-col">
+            <h2 class="text-md font-serif mb-6 md:mb-8">Details der Bestellung</h2>
+            <div class="flex flex-col gap-5">
+              <h3 class="text-[1.25rem] font-serif">Lieferungsadresse</h3>
+              <div class="flex flex-col gap-2">
+                <span class="font-medium"> John Smith </span>
+                <span> 1226 University Dr Menio Park </span>
+                <span> Riga 908506 </span>
+                <span> Latvia </span>
+              </div>
+            </div>
+          </div>
+          <div class="py-8 border-b border-gray-100 flex flex-col">
+            <div class="flex flex-col gap-5">
+              <h3 class="text-[1.25rem] font-serif">Rechnungsadresse</h3>
+              <div class="flex flex-col gap-2">
+                <span class="font-medium">Die Rechnungsadresse ist mit der Lieferungsadresse identisch. </span>
+                <span> 1226 University Dr Menio Park </span>
+              </div>
+            </div>
+          </div>
+          <div class="py-8 flex flex-col md:flex-row gap-8">
+            <div class="flex-1 flex flex-col">
+              <h3 class="font-serif text-[1.25rem] mb-5">Zahlungsmethode</h3>
+              <div class="mb-4"><img src={% static './images/paypal.svg' %} alt=""></div>
+              <span>Endnummer der Karte 0127</span>
+              <span>Ablaufdatum der Karte 07/26</span>
+            </div>
+            <div class="flex-1 flex flex-col">
+              <h3 class="font-serif text-[1.25rem] mb-5">Liefetung via</h3>
+              <div class="mb-4"><img src={% static './images/dhl.svg' %} alt=""></div>
+              <span>DHL Standard</span>
+              <span class="text-xs text-gray-300">(üblicherweise 4-5 Werktage)</span>
+            </div>
+          </div>
+          <div class="hidden md:flex flex-col md:flex-row gap-3 mt-4">
+            <a href="" class="btn btn--black-filled uppercase"> Weiter shoppen </a>
+            <a href="" class="btn btn--black uppercase"> Zurück zum konto </a>
+          </div>
+        </div>
+        <div class="pt-8 flex border-t border-gray-100 flex-col flex-1">
+          <h3 class="text-md font-serif mb-8">Ihre Bestellung</h3>
+          <div class="flex flex-col gap-6 pb-6 border-b border-gray-100">
+            {% for item in[1, 2, 3] %}
+              <div class="flex gap-4">
+                <picture class="flex-none block w-[100px] lg:w-[60px] h-[100px] lg:h-[72px]">
+                  <img src={% static './images/qwe.jpg' %} class="block w-full h-full object-cover" alt="">
+                </picture>
+                <div class="flex flex-col">
+                  <h4 class="text-sm font-medium mb-3">Kurze Steppjacke mit Kapuze Willer Mokkafarben</h4>
+                  <div class="flex flex-wrap -mx-2 gap-y-2 mb-2">
+                    <div class="px-2 flex border-r border-gray-100 last:border-none">
+                      <span class="text-xs text-gray-200">Colour:</span>
+                      <span class="text-xs">White</span>
+                    </div>
+                    <div class="px-2 flex border-r border-gray-100 last:border-none">
+                      <span class="text-xs text-gray-200">Size:</span>
+                      <span class="text-xs">XL</span>
+                    </div>
+                  </div>
+                  <div class="flex gap-1 mb-3">
+                    <span class="text-xs text-gray-200">SKU:</span>
+                    <span class="text-xs">677C / 677B</span>
+                  </div>
+                  <data class="font-medium text-xs">49,00€</data>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="flex flex-col gap-4 pt-6 pb-6 border-b border-gray-100">
+            <div class="flex justify-between">
+              <span>Produkte</span>
+              <span class='font-medium'>147,00€</span>
+            </div>
+            <div class="flex justify-between">
+              <div class="flex flex-col">
+                <span>Standartlieferung</span>
+                <span class="text-gray-300 text-sm">(3-4 Werktage)</span>
+              </div>
+              <span class='font-medium'>6,99€</span>
+            </div>
+          </div>
+          <div class="flex justify-between pt-6">
+            <div class="flex items-center gap-2">
+              <span class="font-medium text-base">Gesamt</span>
+              <span class="text-gray-200">inkl. MwSt.</span>
+            </div>
+            <data class="font-medium text-lg md:text-base">158,95€</data>
+          </div>
+          <div class="md:hidden flex flex-col md:flex-row gap-1 mt-4">
+            <a href="" class="btn btn--black-filled uppercase"> Weiter shoppen </a>
+            <a href="" class="btn btn--black uppercase"> Zurück zum konto </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

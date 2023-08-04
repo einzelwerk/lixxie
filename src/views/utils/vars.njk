@@ -1,18 +1,61 @@
 {% set menu = [
   {
     'title': 'Shop',
-    'url': '/'
+    'url': '/catalog.html',
+    'submenu': [
+      {
+        'title': 'Category',
+        'url': '/category.html'
+      }, {
+        'title': 'Product',
+        'url': '/product.html'
+      }
+    ]
   }, {
-    'title': 'Neuheiten',
-    'url': '/about/'
+    'title': 'About',
+    'url': '/about.html',
+    'submenu': [
+      {
+        'title': 'Category 2 ',
+        'url': '/category.html'
+      }, {
+        'title': 'Product 2',
+        'url': '/product.html'
+      }
+    ]
   }, {
-    'title': 'Drops',
-    'url': '/collections/'
+    'title': 'Card',
+    'url': '/card.html'
   }, {
-    'title': 'Accessories',
-    'url': '/contact/'
+    'title': 'Favorites',
+    'url': '/favorites.html'
   }, {
-    'title': 'Bestseller',
-    'url': '/contact/'
+    'title': 'Cart',
+    'url': '/cart.html'
   }
+] %}
+
+{% set allPages = [
+{ title: 'about', url: 'about.html' },
+{ title: 'address', url: 'address.html' },
+{ title: 'card', url: 'card.html' },
+{ title: 'cart', url: 'cart.html' },
+{ title: 'catalog', url: 'catalog.html' },
+{ title: 'details', url: 'details.html' },
+{ title: 'error404', url: 'error404.html' },
+{ title: 'faq', url: 'faq.html' },
+{ title: 'favorites', url: 'favorites.html' },
+{ title: 'forgot-check', url: 'forgot-check.html' },
+{ title: 'forgot-success', url: 'forgot-success.html' },
+{ title: 'forgot', url: 'forgot.html' },
+{ title: 'index', url: 'index.html' },
+{ title: 'order-details', url: 'order-details.html' },
+{ title: 'orders', url: 'orders.html' },
+{ title: 'privacy-policy', url: 'privacy-policy.html' },
+{ title: 'register', url: 'register.html' },
+{ title: 'reset-password', url: 'reset-password.html' },
+{ title: 'shipping', url: 'shipping.html' },
+{ title: 'signin', url: 'signin.html' },
+{ title: 'thank-you', url: 'thank-you.html' },
+{ title: 'verify-email', url: 'verify-email.html' }
 ] %}

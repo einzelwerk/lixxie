@@ -1,51 +1,220 @@
 {% import 'vars.njk' as vars %}
 
-<aside class="bg-gradient-to-r from-[#FCEFE6] to-[#F7D6DF] w-full font-medium py-3 text-[12px] uppercase text-center">
+<div class="flex gap-4">
+  {% for item in vars.allPages %}
+    <a href={{item.url}}>
+      {{ item.title}}
+    </a>
+  {% endfor %}
+</div>
+
+<div x-data="{menuOpen : false}">
+  <aside class="bg-gradient-to-r from-[#FCEFE6] to-[#F7D6DF] w-full font-medium py-3 text-[12px] uppercase text-center">
   PREVIOUS COLLECTION FINAL SALE: <span class="text-red">-50%</span>
-</aside>
-<header>
-  <div class="py-9 container grid grid-cols-[1fr_max-content_1fr] items-center">
-    <form action="" class="flex">
-      <input type="text" class="py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="Suche..."/>
-      <button class="rounded-r bg-gray-50 flex items-center justify-center p-3 border border-l-0 border-gray-100 transition-all hover:bg-gray-100">
-        <svg width="20" height="20">
-          <use xlink:href="./assets/sprite.svg#search_sprite"></use>
+  </aside>
+  <header>
+    <div class="py-4 md:py-9 container grid grid-cols-[1fr_max-content_1fr] items-center">
+      <button class="flex md:hidden" type="button" x-on:click="menuOpen = ! menuOpen" aria-label="Open menu">
+        <svg width="24" height="24">
+          <use xlink:href="./assets/sprite.svg#menu_sprite"></use>
         </svg>
       </button>
-    </form>
-    <div class="flex justify-center items-center">
-      <a href="" class="block">
-        <img src={% static './images/logo.svg' %} alt="">
-      </a>
+      <form action="" class="hidden md:flex">
+        <input type="text" class="py-3 px-4 rounded-l border border-gray-100 placeholder:opacity-50" placeholder="Suche..."/>
+        <button class="rounded-r bg-gray-50 flex items-center justify-center p-3 border border-l-0 border-gray-100 transition-all hover:bg-gray-100">
+          <svg width="20" height="20">
+            <use xlink:href="./assets/sprite.svg#search_sprite"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="flex justify-center items-center">
+        <a href="" class="block">
+          <img src={% static './images/logo.svg' %} class="w-24 h-7 md:w-36 md:h-12" alt="">
+        </a>
+      </div>
+      <div class="flex gap-5 justify-end">
+        <a href="" class="hidden md:block group-hover:bg-red">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#user_sprite"></use>
+          </svg>
+        </a>
+        <a href="" class="block group-hover:bg-red">
+          <svg width="24" height="24" class="fill-none stroke-black transition-all hover:fill-red hover:stroke-red">
+            <use xlink:href="./assets/sprite.svg#favorite-filled_sprite"></use>
+          </svg>
+        </a>
+        <a href="" class="block group-hover:bg-red">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#cart_sprite"></use>
+          </svg>
+        </a>
+      </div>
     </div>
-    <div class="flex gap-5 justify-end">
-      <a href="" class="hidden md:block group-hover:bg-red">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#user_sprite"></use>
-        </svg>
+
+    <nav class="hidden md:block border border-t border-gray-100 relative">
+      <ul class="flex flex-wrap justify-center items-center ">
+        {% for item in vars.menu -%}
+          <li class="text-xs group hover:border-b border-black px-3">
+            <a href={{ item.url }} class="block py-5 px-3">{{ item.title }}</a>
+            <div
+          class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"
+        >
+              <div class="bg-white">
+                <div class="container grid grid-cols-4 pb-20 pt-8">
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">{{ item.title }}</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Neu in diesem Monat</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Kollektion</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Winter/Herbst 23'</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Limitierte Kollektion “Viktor”</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Quaki Ntro</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">La.moda Mode</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <nav>
+                      <ul class="flex flex-col gap-4">
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Frau</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Mann</a>
+                        </li>
+                        <li class="text-xs text-gray-300">
+                          <a class="link-hover" href="">Kinder</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="flex flex-col gap-6">
+                    <h6 class="font-medium text-xs">Einkaufen nach</h6>
+                    <a href="" class="flex flex-col gap-3">
+                      <picture class="rounded-lg block overflow-hidden">
+                        <img src={% static './images/menu.jpg' %} class="block w-full h-full object-cover" alt="">
+                      </picture>
+                      <span class="text-xs text-gray-300">Winter/Herbst 23'</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        {%- endfor %}
+        <li class="text-xs py-2 px-3 bg-red text-white rounded">
+          <a href="" class="link-hover">Sale</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div x-show="menuOpen" x-data="{ openMenu: null }" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-y-full" x-transition:enter-end="-translate-y-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="-translate-y-0" x-transition:leave-end="-translate-y-full" class="md:hidden fixed inset-0 w-full h-full flex flex-col bg-white z-50 overflow-auto">
+    <div class="border-b border-gray-100">
+      <div class="flex justify-between py-6 container ">
+        <picture class="block w-16">
+          <img src={% static './images/logo.svg' %} class="w-full h-full object-contain" alt="">
+        </picture>
+        <button x-on:click="menuOpen = false" aria-label="Close menu">
+          <svg width="24" height="24">
+            <use xlink:href="./assets/sprite.svg#close_sprite"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div  class="h-full container">
+      <nav class="h-full">
+        <ul class="flex flex-col relative h-full">
+          {% for item in vars.menu -%}
+            <li class="py-3  text-xs flex justify-between">
+
+              <a href={{ item.url}}  class="flex-1" >{{ item.title }}</a>
+              <button x-on:click="openMenu === {{ loop.index }} ? openMenu = null : openMenu = {{ loop.index }}">
+                <svg width="16" height="16" class="-rotate-90" :class="{ 'rotate-90': openMenu === {{ loop.index }} }">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+              </button>
+
+            </li>
+            <div x-show="openMenu === {{ loop.index }}" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end=" translate-x-0" x-transition:leave="transition ease-in duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="absolute inset-0 h-full bg-white z-50">
+              <button class="flex items-center gap-3 pt-5 pb-5 " x-on:click.prevent="openMenu = null">
+                <svg width="16" height="16" class="rotate-90">
+                  <use xlink:href="./assets/sprite.svg#CaretRight_sprite"></use>
+                </svg>
+                <span>Züruck</span>
+              </button>
+              <ul class="flex flex-col">
+                {% for submenuItem in item.submenu -%}
+                  <li class="py-3  text-xs">{{ submenuItem.title }}</li>
+                {%- endfor %}
+              </ul>
+            </div>
+          {%- endfor %}
+          <li class="py-3 text-xs text-red">
+            <a href="#" class="flex justify-between">
+              <span>Sale</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-b border-t border-gray-100">
+      <div class="flex flex-col py-6  container" x-show="!openMenu" x-transition>
+        <h4 class="font-serif mb-4">Mein Konto</h4>
+        <div class="flex flex-col gap-2">
+          <a href="" class="btn btn--black-filled uppercase">
+        anmelden
       </a>
-      <a href="" class="block group-hover:bg-red">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#favorite_sprite"></use>
-        </svg>
+          <a href="" class="btn btn--black uppercase">
+        registrieren
       </a>
-      <a href="" class="block group-hover:bg-red">
-        <svg width="24" height="24">
-          <use xlink:href="./assets/sprite.svg#cart_sprite"></use>
-        </svg>
-      </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col container py-6 gap-4"x-show="!openMenu"  x-transition>
+      <div class="flex flex-col gap-3 ">
+        <div class="flex items-center gap-3">
+          <svg width="24" height="24" class="text-black">
+            <use xlink:href="./assets/sprite.svg#delivery_sprite"></use>
+          </svg>
+          <span class="text-xs">Kostenloser Versand immer ab 69 eur</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg width="24" height="24" class="text-black">
+            <use xlink:href="./assets/sprite.svg#box_sprite"></use>
+          </svg>
+          <span class="text-xs">14 tage Rückaberecht</span>
+        </div>
+      </div>
+      <div class="flex flex-col text-gray-200 text-xs">
+        <p >Ihre Lieferadresse liegt in Deutschland und </p>
+        <p>Ihre Bestellung wird in EUR €  abgerechnet.</p>
+
+      </div>
     </div>
   </div>
-  <nav class="border border-t border-gray-100 py-3">
-    <ul class="flex flex-wrap justify-center items-center gap-3">
-      {% for item in vars.menu -%}
-        <li class="text-xs py-2 px-3">
-          <a href={{ item.url }} class="link-hover">{{ item.title }}</a>
-        </li>
-      {%- endfor %}
-      <li class="text-xs py-2 px-3 bg-red text-white rounded">
-        <a href="" class="link-hover">Sale</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+</div>

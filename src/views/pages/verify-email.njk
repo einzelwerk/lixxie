@@ -1,0 +1,25 @@
+{% extends "template.njk" %}
+{% block content %}
+  <section class="">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-1 flex max-lg:container justify-end items-center pt-16 md:pt-14 max-lg:pb-20 lg:pr-24">
+        <div class="w-full max-w-xl flex flex-col items-center">
+          <picture class="block w-20 h-20 rounded-full overflow-hidden mb-6 md:mb-12">
+            <img src={% static './images/email-big.svg' %} alt="" class="w-full h-full object-cover">
+          </picture>
+          <h1 class="font-serif text-lg mb-6 text-center">Verify your E-Mail-Addresse</h1>
+          <p class="text-center mb-6 md:mb-10">Thank you for signing up! To complete the registration process, please check your email and click the verification link that we have sent you.</p>
+          <div class="flex flex-col md:flex-row gap-3 mb-6 md:mb-20 w-full">
+            <a href="" class="btn btn--black-filled flex-1 uppercase  text-xs rounded">go to login</a>
+            <a href="" class="btn btn--black flex-1 uppercase  text-xs rounded">Resend email</a>
+          </div>
+          <a href="" class="underline text-xs">I don’t have reset password e-mail</a>
+        </div>
+      </div>
+      <picture class="flex-1 block h-screen">
+        <img src={% static './images/verify.jpg' %} class="w-full h-full object-cover" alt="">
+      </picture>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,5 +1,149 @@
 {% extends "template.njk" %}
 
 {% block content %}
-    <div class="">kek</div>
+    {% include "hero-no-slider.njk" %}
+    <section class="section container">
+        <div class="section-heading-2">
+            <h2 class="section-heading-2__title">— A traditional approach while imagining what the furniture of tomorrow could be, in its use and representation.</h2>
+            <div class="section-heading-2__col">
+                <p class="section-heading-2__desc">
+                    Lixxi is a collectible wear studio backed by a manufacturing workshop.
+                </p>
+            </div>
+        </div>
+        <div class="swiper js-default-slider overflow-visible">
+            <div class="swiper-wrapper overflow-visible">
+                {% for items in[
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ] %}
+                    <div class="swiper-slide">
+                        <picture class="block rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover block" src={% static './images/slider/' + items + '.jpg' %} alt="">
+                        </picture>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <div class="py-6 px-7 bg-paleOrange rounded-lg md:p-14 flex flex-col items-center">
+            <h3 class="font-serif text-lg mb-6 md:mb-14">Unsere Advantages</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:flex-row md:gap-10">
+                <div class="flex flex-col items-center gap-3 md:gap-8">
+                    <picture class="block w-[72px] h-[72px]">
+                        <img src={% static './images/features/1.svg' %} alt="">
+                    </picture>
+                    <div class="flex flex-col items-center gap-1 md:gap-3">
+                        <h4 class="font-serif text-center text-base">Praktische Passform</h4>
+                        <p class="text-center">We're committed to eco-friendly materials and production processes.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-3 md:gap-8">
+                    <picture class="block w-[72px] h-[72px]">
+                        <img src={% static './images/features/2.svg' %} alt="">
+                    </picture>
+                    <div class="flex flex-col items-center gap-1 md:gap-3">
+                        <h4 class="font-serif text-center text-base">Praktische Passform</h4>
+                        <p class="text-center">We're committed to eco-friendly materials and production processes.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-3 md:gap-8">
+                    <picture class="block w-[72px] h-[72px]">
+                        <img src={% static './images/features/3.svg' %} alt="">
+                    </picture>
+                    <div class="flex flex-col items-center gap-1 md:gap-3">
+                        <h4 class="font-serif text-center text-base">Praktische Passform</h4>
+                        <p class="text-center">We're committed to eco-friendly materials and production processes.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-3 md:gap-8">
+                    <picture class="block w-[72px] h-[72px]">
+                        <img src={% static './images/features/4.svg' %} alt="">
+                    </picture>
+                    <div class="flex flex-col items-center gap-1 md:gap-3">
+                        <h4 class="font-serif text-center text-base">Praktische Passform</h4>
+                        <p class="text-center">We're committed to eco-friendly materials and production processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <div class="section pt-0">
+            <div class="flex flex-col gap-8 md:gap-28">
+                {% for items in[1, 2] %}
+                    <div class="flex flex-col items-center gap-8 md:gap-0 md:flex-row group group-odd md:odd:flex-row-reverse">
+                        <div class="flex flex-1 flex-col md:group-odd:pl-24 md:group-even:pr-24">
+                            <h2 class="font-serif text-lg mb-3 md:mb-8">Unsere Philosophie</h2>
+                            <div class="flex flex-col items-start gap-4 " x-data="{showMore: false}">
+                                <p class=" md:last-of-type:block">Welcome to Lixxi, a contemporary clothing brand from Germany that blends timeless design with modern aesthetic to create versatile and functional pieces for men and women. Our passion for fashion and attention to detail is evident in every stitch, fabric and cut that we use in our collections.</p>
+                                <p class="md:last-of-type:block" x-show="showMore">Founded in 2012, Lixxi was born out of a desire to create clothing that is both stylish and sustainable. We believe that fashion should not come at the cost of the environment, and we strive to make our production processes as eco-friendly as possible. From using organic and recycled materials to reducing waste and carbon emissions, we are committed to making a positive impact on the planet.</p>
+                                <button type="button" class="font-medium  md:hidden" x-on:click="showMore  = ! showMore" x-text="showMore ? 'Show less' : 'Show more'">Show more</button>
+                            </div>
+                        </div>
+                        <picture class="block flex-1">
+                            <img src={% static './images/image.jpg' %} class="w-full h-full object-cover" alt="">
+                        </picture>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+    <section class="section bg-white">
+        <div class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-heading__title">Warum Lixxi?</h2>
+                    <p class="section-heading__desc">Our clothes will make your dreams come true, you will be able to live the moment together with something that will protect you for a very long time.</p>
+                </div>
+                <div class="swiper js-center-slider overflow-visible">
+                    <div class="swiper-wrapper">
+                        {% for image in[1, 2, 3] %}
+                            <div class="swiper-slide">
+                                <picture class="aspect-1 rounded-lg overflow-hidden block mb-3 md:mb-6">
+                                    <img class="block w-full h-full object-cover" src={% static './images/' + image + '.jpg' %} alt="">
+                                </picture>
+                                <div class="flex flex-col gap-1 md:gap-4">
+                                    <h3 class="font-serif text-md">Sustainable Fashion for the  Conscious Consumer</h3>
+                                    <p class="text-gray-300">Shopping for clothes can be a hassle, especially if you don't have the time to go to a physical store. That's where this German clothing brand's online store comes in.</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <div class="section pb-0">
+            <div class="grid md:grid-cols-2 gap-3 md:gap-6">
+                <div class="flex flex-col px-4 md:px-16 py-8 md:py-28 items-center justify-center bg-gradient-to-r from-[#CECAE1] to-[#F6C6D4]  rounded-lg">
+                    <h3 class="font-serif text-lg mb-3 md:mb-6 text-center">
+                    Lixxi: made with love and care
+                </h3>
+                    <p class="text-base text-center mb-8 md:mb-10">The German clothing brand we are discussing is known for its high-quality materials and sleek designs. Their clothing is made to last, with a focus on durability and comfort. </p>
+                    <div class="flex gap-2 md:gap-3">
+                        <a href="" class="btn btn--black-filled uppercase">
+                        ZUM shop
+                    </a>
+                        <a class="btn btn--black uppercase" href="">
+                        kontakt
+                    </a>
+                    </div>
+                </div>
+                <picture class="block h-full rounded-lg overflow-hidden">
+                    <img class="w-full h-full object-cover" src={% static './images/made.jpg' %} alt="">
+                </picture>
+            </div>
+        </div>
+    </section>
+    {% include "reviews.njk" %}
+    {% include "instagram.njk" %}
+    {% include "newsletter.njk" %}
 {% endblock %}

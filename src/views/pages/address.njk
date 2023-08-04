@@ -1,0 +1,154 @@
+{% extends "template.njk" %} {% block content %}
+<section class="section container">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+    <aside class="flex flex-col gap-8 flex-none md:w-48">
+      <h3 class="font-serif text-md hidden md:block">My account</h3>
+      <nav class="flex">
+        <ul class="flex overflow-auto sm:flex-col gap-5">
+          <li
+            class="flex text-gray-300 active max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#deliverybox_sprite"></use>
+              </svg>
+              <span>Orders</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#recipt_sprite"></use>
+              </svg>
+              <span>Details</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#shop_sprite"></use>
+              </svg>
+              <span>Addresses</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#message_sprite"></use>
+              </svg>
+              <span>Preferences</span></a
+            >
+          </li>
+          <li
+            class="flex text-gray-300 max-sm:[&.active]:border-b max-sm:[&.active]:border-black max-sm:pb-3 [&.active]:text-black [&.active]:font-medium"
+          >
+            <a href="" class="flex items-center gap-1 md:gap-3 text-xs md:text-sm">
+              <svg width="24" height="24">
+                <use xlink:href="./assets/sprite.svg#alarm_sprite"></use>
+              </svg>
+              <span>Notifications</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="flex flex-col items-start gap-10 w-full max-w-xl">
+      <h1 class="text-lg font-serif">My addresses</h1>
+      <div class="flex flex-col gap-4 max-w-xl border-t border-gray-100 pt-6 md:pt-8 w-full">
+        <img src={% static './images/address.svg' %} class="w-10 h-10 block" alt="">
+        <span class="text-base">You currently have no addresses saved</span>
+        <span class="text-sm">Add an address for a quicker checkout experience</span>
+      </div>
+      <button class="btn btn--black-filled uppercase px-24 js-create-address" type="button">add address</button>
+      <div class="js-address hidden [&.active]:flex flex-col pt-6 md:pt-8 gap-8 w-full border-t border-gray-100">
+        <h3 class="font-serif text-base">New address</h3>
+        <form action="">
+          <div class="grid grid-cols-2 gap-y-6 gap-x-3 md:gap-x-5 md:gap-y-4 mb-8">
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">First name</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Second name</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Company name (optional)</span>
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+              />
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Company name (optional)</span>
+              <select class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm">
+                <option>Germany</option>
+                <option>USA</option>
+                <option>USA</option>
+              </select>
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Address</span>
+              <fieldset class="flex flex-col gap-3">
+                <input
+                  class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="text"
+                  placeholder="Street and house number"
+                />
+                <input
+                  class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="text"
+                  placeholder="Building, entrance, floor, apartment number"
+                />
+              </fieldset>
+            </label>
+            <label class="flex flex-col gap-3 col-span-2" for="">
+              <span class="text-xs">Region</span>
+              <select class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm">
+                <option>Land Berlin</option>
+                <option>USA</option>
+                <option>USA</option>
+              </select>
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Locality</span>
+
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+                placeholder="Street and house number"
+              />
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Index</span>
+
+              <input
+                class="bg-[transparent] w-full py-[14px] border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+                placeholder="Street and house number"
+              />
+            </label>
+          </div>
+          <div class="flex gap-1 md:gap-5 w-full">
+            <button class="flex-1 btn btn--black uppercase js-cancel-create-address" type="button">cancel</button>
+            <button class="flex-1 btn btn--black-filled uppercase" type="submit">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

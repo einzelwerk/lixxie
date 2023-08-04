@@ -1,0 +1,89 @@
+{% extends "template.njk" %} {% block content %}
+<section class="">
+  <div class="flex flex-col md:flex-row">
+    <div class="flex-1 flex max-lg:container justify-end pt-8 md:pt-14 max-lg:pb-20 lg:pr-24">
+      <div class="w-full max-w-xl flex flex-col">
+        <div class="flex gap-3 mb-8 md:mb-12">
+          <a href="" class="hover:text-black transition-colors text-lg font-serif text-gray-200"> Sign In</a>
+          <h1 class="text-lg font-serif">Registrieren</h1>
+        </div>
+        <form action="" class="flex flex-col gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Name*</span>
+              <input
+                class="bg-[transparent] py-[14px] w-full border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                type="text"
+                placeholder="Max Masterman"
+              />
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">E-Mail-Adresse*</span>
+              <div class="relative">
+                <input
+                  class="bg-[transparent] py-[14px] w-full border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="email"
+                  placeholder="example@example.com"
+                />
+              </div>
+            </label>
+
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Passwort*</span>
+              <div class="relative">
+                <input
+                  class="bg-[transparent] py-[14px] w-full border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="password"
+                  placeholder="password"
+                />
+                <button class="js-toggle-password block absolute right-4 top-0 bottom-0" type="button">
+                  <svg width="20" height="20">
+                    <use xlink:href="./assets/sprite.svg#password_sprite"></use>
+                  </svg>
+                </button>
+              </div>
+            </label>
+            <label class="flex flex-col gap-3" for="">
+              <span class="text-xs">Passwort repeat*</span>
+              <div class="relative">
+                <input
+                  class="bg-[transparent] py-[14px] w-full border-gray-100 rounded placeholder:text-gray-200 placeholder:text-sm text-sm"
+                  type="password"
+                  placeholder="password"
+                />
+              </div>
+            </label>
+          </div>
+          <div class="flex justify-between mb-5">
+            <div class="flex gap-3">
+              <input class="peer sr-only" id="remember-me" type="checkbox" />
+              <span class="block w-4 h-4 flex-none border border-gray-100 rounded peer-checked:bg-red"></span>
+              <label for="remember-me" class="flex items-center">
+                <span class="text-xs"
+                  >Melden Sie sich an und erfahren Sie alles über exklusive Rewards, individuelle Neuzugänge und neue Artikel. Abmelden können Sie
+                  sich unten in unseren E-Mails. Mehr erfahren</span
+                >
+              </label>
+            </div>
+          </div>
+          <p class="text-xs prose prose-a:font-normal">
+            Mit Ihrer Anmeldung stimmen Sie automatisch unseren <a href="">AGB </a>und unserer <a href="">Datenschutzerklärung und Cookie-Richtlinie</a> zu und
+            treten unserem Loyalty-Programm bei
+          </p>
+
+          <div class="flex flex-col gap-3">
+            <button class="btn btn--black-filled uppercase">registrieren</button>
+            <span class="text-gray-200 text-center">Oder</span>
+            <a href="" class="btn btn--black flex gap-4 items-center uppercase justify-center rounded">
+              <img src={% static './images/fb.svg' %} alt="">
+              <span>Weiter mit facebook</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <picture class="flex-1 block h-screen"> <img src={% static './images/reg.jpg' %} class="w-full h-full object-cover" alt=""> </picture>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,5 +1,5 @@
-@tailwind base;
 @tailwind components;
+@tailwind base;
 @tailwind utilities;
 
 @layer base {
@@ -73,6 +73,7 @@
   }
 
   .btn {
+    @apply text-center rounded;
     &--primary {
       @apply text-white border border-white  font-medium  px-5 py-4 transition-all;
       &:hover {
@@ -86,18 +87,73 @@
         @apply text-white bg-black;
       }
     }
+    &--black-filled {
+      @apply text-white border border-black font-medium transition-all px-5 py-4 bg-black rounded;
+      &:hover {
+        @apply bg-white text-black border-white;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    &__list {
+      @apply flex flex-wrap gap-2 text-xs;
+    }
+
+    &__name {
+      @apply text-gray-300;
+    }
+
+    &__link {
+      @apply flex items-center gap-2;
+      &:hover {
+        @apply underline;
+      }
+      &:after {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        background: url('../assets/images/CaretRight.svg') no-repeat center center;
+        display: block;
+      }
+    }
   }
 
   .section {
-    padding-top: 3.75rem;
-    padding-bottom: 3.75rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    @screen md {
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+    }
+    &--big {
+      padding-top: 6.25rem;
+      padding-bottom: 6.25rem;
+    }
+  }
+
+  .dark-bg {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      pointer-events:none;
+      z-index: -1;
+    }
   }
 
   .section-heading {
     @apply flex flex-col gap-3 mb-8 sm:text-center sm:items-center sm:mb-12 sm:gap-6;
 
     &__title {
-      @apply text-xl  font-serif sm:text-center;
+      @apply text-lg  font-serif sm:text-center;
+    }
+    &__desc {
+      @apply text-base text-center max-w-3xl;
     }
     &__link {
       @apply text-center text-sm flex items-center gap-2 text-gray-250;
@@ -116,7 +172,7 @@
     @apply flex flex-col md:flex-row gap-3 justify-between mb-8 md:mb-[60px];
 
     &__title {
-      @apply text-xl font-serif max-w-xl;
+      @apply text-lg font-serif max-w-2xl;
     }
 
     &__col {
@@ -124,7 +180,7 @@
     }
 
     &__desc {
-      @apply text-base;
+      @apply text-base text-gray-300;
     }
 
     &__link {
@@ -138,6 +194,69 @@
         }
       }
     }
+  }
+
+  .text-xs {
+    font-size: 0.875rem;
+    line-height: 20px;
+    @screen md {
+      font-size: 0.875rem;
+      line-height: 20px;
+    }
+  }
+
+  .text-sm {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+
+  .text-base {
+    font-size: 1rem;
+    line-height: 24px;
+    @screen md {
+      font-size: 1.25rem;
+      line-height: 30px;
+    }
+  }
+
+  .text-md {
+    font-size: 1.25rem;
+    line-height: 30px;
+    @screen md {
+      font-size: 1.5rem;
+      line-height: 32px;
+    }
+  }
+
+  .text-lg {
+    font-size: 1.5rem;
+    line-height: 32px;
+    @screen md {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+  }
+
+  .text-xl {
+    font-size: 1.75rem;
+    line-height: 36px;
+    @screen md {
+      font-size: 2.5rem;
+      line-height: 50px;
+    }
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+
+  .prose {
+    @apply max-w-3xl prose-headings:font-serif prose-headings:mb-6 prose-headings:font-normal prose-p:text-sm prose-p:text-gray-300 prose-ul:text-gray-300 prose-ol:text-gray-300;
+    @apply prose-h1:text-xl prose-h2:text-lg prose-h3:text-md prose-h4:text-base prose-h5:text-sm;
   }
 }
 
@@ -158,5 +277,25 @@
   }
   &--active {
     opacity: 1;
+  }
+}
+
+details > summary::marker {
+  display: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+}
+
+
+[x-cloak] { display: none !important; }
+
+input {
+  &:focus {
+    outline: #000;
   }
 }
