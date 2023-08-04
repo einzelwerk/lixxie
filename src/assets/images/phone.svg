@@ -1,0 +1,22 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="phone (1) 1">
+<g id="g918">
+<g id="g920">
+<g id="Clip path group">
+<mask id="mask0_1441_36188" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="4" y="4" width="40" height="40">
+<g id="clipPath926">
+<path id="path924" d="M4 4H44V44H4V4Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_1441_36188)">
+<g id="g922">
+<g id="g928">
+<path id="path930" d="M15.2135 5.17139C12.5506 5.17139 9.99625 6.22936 8.11281 8.11248C6.23 9.99568 5.17188 12.5498 5.17188 15.213C5.17188 30.4642 17.5351 42.8276 32.7865 42.8276C35.4494 42.8276 38.0037 41.7697 39.8871 39.8865C41.77 38.0033 42.8281 35.4492 42.8281 32.786L30.276 27.7651L27.7656 34.0412H27.7643C20.1396 34.0412 13.9584 27.8601 13.9584 20.2351V20.2339L20.2344 17.7235L15.2135 5.17139Z" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
