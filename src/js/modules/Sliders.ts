@@ -2,7 +2,7 @@ import Swiper, { Mousewheel, Pagination, Thumbs } from 'swiper';
 
 import 'swiper/css';
 
-class Sliders {
+export class Sliders {
   static hero() {
     const root = document.querySelector('.js-hero-slider') as HTMLElement;
     const sliderInstance = new Swiper(root, {
@@ -119,7 +119,6 @@ class Sliders {
         },
 
         breakpoints: {
-  
           768: {
             slidesPerView: 5,
             spaceBetween: 20,
@@ -174,8 +173,8 @@ class Sliders {
     const galleryTop = new Swiper('.js-product-main', {
       modules: [Thumbs],
       spaceBetween: 10,
-      slidesPerView:2.4,
-  
+      slidesPerView: 2.4,
+
       thumbs: {
         swiper: galleryThumbs,
       },
