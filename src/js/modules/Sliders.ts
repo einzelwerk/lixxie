@@ -1,4 +1,4 @@
-import Swiper, { Mousewheel, Pagination, Thumbs } from 'swiper';
+import Swiper, { Mousewheel, Pagination } from 'swiper';
 
 import 'swiper/css';
 
@@ -157,34 +157,6 @@ export class Sliders {
       sliderInstance.init();
     });
   }
-
-  static product() {
-    const galleryThumbs = new Swiper('.js-product-thumbs', {
-      spaceBetween: 8,
-      slidesPerView: 6,
-
-      direction: 'vertical',
-      watchOverflow: true,
-
-      watchSlidesProgress: true,
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const galleryTop = new Swiper('.js-product-main', {
-      modules: [Thumbs],
-      spaceBetween: 10,
-      slidesPerView: 2.4,
-
-      thumbs: {
-        swiper: galleryThumbs,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 1,
-        },
-      },
-    });
-  }
 }
 
 function slidersInit() {
@@ -193,7 +165,6 @@ function slidersInit() {
   Sliders.half();
   Sliders.default();
   Sliders.center();
-  Sliders.product();
   Sliders.slider5();
 }
 
