@@ -30,8 +30,9 @@ document.addEventListener('click', (e): void => {
   const target = (e.target as HTMLElement).closest('.variable-item');
   if (target instanceof HTMLElement) {
     const data = target.dataset.value;
+    console.log(data, target);
     document.querySelectorAll('.js-product-main .swiper-slide').forEach((t, index) => {
-      if (t.closest(`[data-attribute_pa_farbe=${data}]`)) {
+      if (t.closest(`[data-attribute_pa_farbe="${data}"]`)) {
         galleryTop.slideTo(index - 1);
       }
     });
