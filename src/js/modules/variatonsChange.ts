@@ -33,6 +33,8 @@ document.addEventListener('click', (e): void => {
     console.log(data, target);
     document.querySelectorAll('.js-product-main .swiper-slide').forEach((t, index) => {
       if (t.closest(`[data-attribute_pa_farbe="${data}"]`)) {
+        galleryTop.update();
+        t.classList.remove('hidden');
         galleryTop.slideTo(index - 1);
       }
     });
