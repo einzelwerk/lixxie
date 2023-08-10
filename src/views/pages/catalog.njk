@@ -145,7 +145,7 @@
               <span class="font-medium">150 Produkten</span>
               <button class="text-xs text-gray-200 hover:text-black">Clear filters</button>
             </div>
-            <div class="flex gap-3">
+            <div class="flex flex-col md:flex-row gap-3">
               <div  class="md:hidden w-36 relative">
                 <button x-on:click="showFilters = ! showFilters"  x-bind:class="{ 'bg-white': showFilters, '': !showFilters }" class="flex justify-center md:justify-between items-center w-full  py-3 px-4 border border-gray-100 rounded">
                   <span class="text-xs flex  gap-2">
