@@ -54,7 +54,7 @@
     <nav class="hidden md:block border border-t border-gray-100 relative">
       <ul class="flex flex-wrap justify-center items-center ">
         {% for item in vars.menu -%}
-          <li class="text-xs group hover:border-b border-black px-3">
+          <li class="text-xs group nav-link border-black px-3">
             <a href={{ item.url }} class="block py-5 px-3">{{ item.title }}</a>
             <div
           class="transition-all overflow-hidden opacity-0 invisible group-hover:visible group-hover:opacity-100 w-screen top-full bg-white absolute inset-x-0 z-50 border-t border-gray-100 after:h-screen after:absolute after:inset-0 after:bg-black after:-z-10 after:opacity-50"

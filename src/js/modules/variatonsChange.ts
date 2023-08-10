@@ -26,17 +26,34 @@ const galleryTop = new Swiper('.js-product-main', {
   },
 });
 
-document.addEventListener('click', (e): void => {
-  const target = (e.target as HTMLElement).closest('.variable-item');
-  if (target instanceof HTMLElement) {
-    const data = target.dataset.value;
-    console.log(data, target);
-    document.querySelectorAll('.js-product-main .swiper-slide').forEach((t, index) => {
-      if (t.closest(`[data-attribute_pa_farbe="${data}"]`)) {
-        galleryTop.update();
-        t.classList.remove('hidden');
-        galleryTop.slideTo(index - 1);
-      }
-    });
+function handleItemClick(e) {
+  const target = e.currentTarget;
+  const data = target.dataset.value;
+
+  const trg = document.querySelector(`.js-product-main [data-attribute_pa_farbe="${data}"]`) as HTMLElement;
+
+  // Сначала убираем класс hidden
+  trg.classList.remove('hidden');
+
+  const slides = Array.from(document.querySelectorAll('.js-product-main .swiper-slide:not(.hidden)'));
+
+  const trgIndex = slides.indexOf(trg);
+
+  console.log(trgIndex);
+
+  if (trgIndex !== -1) {
+    // Обновляем галерею и переключаем на нужный слайд
+    galleryTop.update();
+    galleryTop.slideTo(trgIndex, 500, false);
   }
-});
+}
+
+function handlePageLoad() {
+  const imageItems = document.querySelectorAll('.image-variable-item');
+  imageItems.forEach((item) => {
+    item.addEventListener('click', handleItemClick);
+  });
+}
+
+// Добавляем обработчик события загрузки страницы
+window.addEventListener('load', handlePageLoad);
