@@ -47,6 +47,15 @@
     @apply overflow-clip;
   }
 
+  .image-gradient {
+    @apply relative;
+    &:before {
+      content: '';
+      @apply h-full w-full absolute inset-0 block opacity-70;
+      background: linear-gradient(180deg, rgba(130, 125, 123, 0) 0%, rgba(102, 94, 91, 0.03) 2.6%, #332925 100%);
+    }
+  }
+
   .link-hover {
     position: relative;
 
