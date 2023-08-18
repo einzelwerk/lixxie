@@ -2812,6 +2812,12 @@ input:focus {
   color: rgb(35 31 32 / var(--tw-text-opacity));
 }
 
+.hover\:text-red:hover {
+  --tw-text-opacity: 1;
+  color: rgba(235, 78, 68, 1);
+  color: rgb(235 78 68 / var(--tw-text-opacity));
+}
+
 .hover\:opacity-100:hover {
   opacity: 1;
 }
