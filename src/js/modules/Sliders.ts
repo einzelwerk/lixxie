@@ -168,12 +168,6 @@ function slidersInit() {
   Sliders.slider5();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   slidersInit();
-});
-
-window.addEventListener('resize', () => {
-  setTimeout(() => {
-    slidersInit();
-  }, 1000);
 });

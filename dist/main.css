@@ -1743,6 +1743,9 @@ input[type='number']::-webkit-outer-spin-button,
 .h-10 {
   height: 2.5rem;
 }
+.h-11 {
+  height: 2.75rem;
+}
 .h-12 {
   height: 3rem;
 }
@@ -1805,6 +1808,9 @@ input[type='number']::-webkit-outer-spin-button,
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-11 {
+  width: 2.75rem;
 }
 .w-12 {
   width: 3rem;
@@ -1980,6 +1986,9 @@ input[type='number']::-webkit-outer-spin-button,
 .items-center {
   align-items: center;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-end {
   justify-content: flex-end;
 }
@@ -2126,6 +2135,11 @@ input[type='number']::-webkit-outer-spin-button,
 }
 .bg-\[transparent\] {
   background-color: transparent;
+}
+.bg-beige {
+  --tw-bg-opacity: 1;
+  background-color: rgba(253, 247, 242, 1);
+  background-color: rgb(253 247 242 / var(--tw-bg-opacity));
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -2790,6 +2804,12 @@ input:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(241, 239, 237, 1);
   background-color: rgb(241 239 237 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-paleOrange:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(250, 223, 204, 1);
+  background-color: rgb(250 223 204 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-white:hover {
