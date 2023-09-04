@@ -14,7 +14,7 @@ const galleryThumbs = new Swiper('.js-product-thumbs', {
 const galleryTop = new Swiper('.js-product-main', {
   modules: [Thumbs],
   spaceBetween: 10,
-  slidesPerView: 2.4,
+  slidesPerView: 1.4,
 
   thumbs: {
     swiper: galleryThumbs,
